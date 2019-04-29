@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "World weather application",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "dev": "webpack-dev-server --open --hot --mode development",
     "build": "webpack --progress --hide-modules --mode production"
