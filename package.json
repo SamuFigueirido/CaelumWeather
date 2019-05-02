@@ -5,7 +5,7 @@
   "main": "app.module.js",
   "private": true,
   "scripts": {
-    "dev": "webpack --mode development --config ./config/webpack.config.js",
+    "dev": "webpack-dev-server --open --hot --mode development --config ./config/webpack.config.js",
     "build": "webpack --mode production --config ./config/webpack.config.js"
   },
   "repository": {
