@@ -1,3 +1,58 @@
 body {
     background-color: lightblue;
 }
+
+.md-button.md-raised:not([disabled]) {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.md-button.md-raised:active {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+.md-button {
+
+    &.md-default-theme.md-raised,
+    &.md-raised {
+        color: rgb(33, 33, 33);
+        background-color: rgb(250, 250, 250);
+    }
+
+    &.md-raised:active {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    }
+
+    text {
+        align: center;
+        decoration: none;
+    }
+
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    min-height: 36px;
+    min-width: 88px;
+    line-height: 36px;
+    vertical-align: middle;
+    align-items: center;
+    border-radius: 2px;
+    outline: none;
+    border: 0;
+    padding: 0 6px;
+    margin: 6px 8px;
+    background: transparent;
+    white-space: nowrap;
+
+    font {
+        weight: 400;
+        size: 13px;
+        style: inherit;
+        variant: inherit;
+        family: Arial;
+    }
+
+    overflow: hidden;
+    transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+    background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
