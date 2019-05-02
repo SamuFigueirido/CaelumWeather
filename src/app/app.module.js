@@ -4,5 +4,5 @@ import ngMaterial from 'angular-material';
 import ngAnimate from 'angular-animate';
 import ngAria from 'angular-aria';
 angular.module('app', [
-  ComponentsModule.name, ngMaterial, ngAnimate, ngAria
+  ngMaterial, ngAnimate, ngAria
 ]).component('app', appComponent);
