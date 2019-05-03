@@ -1,6 +1,9 @@
-import template from './hello.html';
 import './hello.css';
-const AppComponent = {
-    template
+
+export default {
+    controller,
+    bindings: {
+        favorite: '<'
+    },
+    template: require('./hello.html')
 };
-export default AppComponent;
