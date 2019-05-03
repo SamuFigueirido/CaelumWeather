@@ -7,11 +7,17 @@
 </head>
 
 <body ng-app="app" ng-strict-di ng-cloak>
-  <app></app>
+  <app>
+    <h1>HELLO WORLD</h1>
+    <md-button class="md-raised md-button md-primary" type="button">
+      Click
+    </md-button>
+    <md-button class="md-primary" type="submit"> Click </md-button>
+  </app>
   <a ui-sref="hello" ui-sref-active="active">Hello</a>
   <a ui-sref="world" ui-sref-active="active">World</a>
   <ui-view></ui-view>
-  <script src='../dist/bundle.js'></script>
+  <script src="../dist/bundle.js"></script>
 </body>
 
 </html>
