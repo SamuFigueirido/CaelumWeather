@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS</title>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <title>AngularJS</title>
-</head>
-
-<body ng-app="app" ng-strict-di ng-cloak>
-  <app>
-    Cargando...
-  </app>
-</body>
-
+  <body ng-app="app">
+    <div ng-strict-di ng-cloak ng-controller="weatherCtrl">
+      <app></app>
+      <br />City: <input type="text" ng-model="search" />
+      <button ng-click="weatherController()">Submit</button>
+    </div>
+    <script src="../dist/bundle.js"></script>
+  </body>
 </html>
