@@ -8,7 +8,11 @@ import ngAnimate from 'angular-animate';
 import ngAria from 'angular-aria';
 import config from './helloworld';
 
-angular.module('app', [ngMaterial, ngAnimate, ngAria]).component('app', appComponent);
+export default angular
+    .module('app', [ngMaterial, ngAnimate, ngAria])
+    .component('app', appComponent)
+    .name;
+    
 const myApp = angular.module('app', [uirouter, ngMaterial, ngAnimate, ngAria])
 
 myApp.component('hello', helloComp);
