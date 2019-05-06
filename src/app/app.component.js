@@ -1,6 +1,7 @@
 import template from './app.component.html';
-import './app.component.css';
 import controller from './app.weatherController';
+import './app.component.scss';
+
 const AppComponent = {
   template,
   controller
