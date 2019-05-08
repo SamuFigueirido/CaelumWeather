@@ -1,12 +1,23 @@
+html {
+  height: 100%;
+}
+.img {
+  background-image: url('../../resources/start-page.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
 body {
-  background-color: rgb(200, 242, 255);
+  height: 100%;
 }
 
 .md-button {
   &.md-fab {
     background-color: rgb(255, 82, 82);
     &:not([disabled]):hover {
-      background-color: rgb(255, 30, 30);
+      background-color: rgb(197, 65, 65);
     }
   }
 }
@@ -14,8 +25,39 @@ body {
 h1,
 .reg {
   padding-top: 10%;
+  text-shadow: 1px 1px 2px black;
+}
+
+.salmon {
+  color: rgb(255, 82, 82);
+}
+
+.skyblue {
+  color: skyblue;
+}
+
+.brown {
+  color: rgb(116, 32, 6);
 }
 
 .container {
   height: 35px;
+  width: 350px;
+}
+
+md-input-container:not(.md-input-invalid) .md-input {
+  color: rgb(255, 82, 82);
+}
+
+md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+  border-color: rgb(116, 32, 6);
+}
+md-input-container:not(.md-input-invalid) .md-input {
+  border-color: rgb(172, 172, 172);
+}
+md-input-container:not(.md-input-invalid).md-input-focused label {
+  color: rgb(116, 32, 6);
+}
+md-input-container:not(.md-input-invalid) .md-input label{
+  color: skyblue;
 }
