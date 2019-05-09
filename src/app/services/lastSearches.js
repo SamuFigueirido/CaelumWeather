@@ -10,13 +10,12 @@ export default class LastSearchesService {
             const cityAux = (city.charAt(0).toUpperCase() + city.slice(1).toLowerCase()).trim();
             if (this.lastSearches.includes(cityAux)) {
                 return;
-            } else {
-                this.lastSearches.unshift(cityAux);
-                if (this.lastSearches.length > 10) {
-                    this.lastSearches.splice(10, this.lastSearches.length - 10);
-                }
-                localStorage.setItem('lastSearches', JSON.stringify(this.lastSearches));
             }
+            this.lastSearches.unshift(cityAux);
+            if (this.lastSearches.length > 10) {
+                this.lastSearches.splice(10, this.lastSearches.length - 10);
+            }
+            localStorage.setItem('lastSearches', JSON.stringify(this.lastSearches));
         }
     }
 
