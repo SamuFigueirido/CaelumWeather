@@ -1,6 +1,7 @@
 export default class StarPageController {
-    constructor(lastSearchesService) {
+    constructor(lastSearchesService, openWeatherMapsService) {
         this.lastSearchesService = lastSearchesService;
+        this.openWeatherMapsService = openWeatherMapsService;
     }
 
     searchCity() {
@@ -12,4 +13,4 @@ export default class StarPageController {
     }
 }
 
-StarPageController.$inject = ['lastSearchesService'];
+StarPageController.$inject = ['lastSearchesService', 'openWeatherMapsService'];
