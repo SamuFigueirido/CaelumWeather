@@ -18,10 +18,15 @@
     <form autocomplete="off" layout="row" layout-align="center center" ng-submit="$ctrl.searchCity()">
         <md-input-container class="container">
             <label>{{isSpanish ? "Mostrarme el tiempo en..." : "Show me the weather in..."}}</label>
-            <input type="text" ng-model="inputCity" id="inputCity" />
+            <input type="text" ng-model="$ctrl.city"/>
         </md-input-container>
         <md-button type="submit" class="md-fab md-mini md-raised:not">
             <md-icon class="material-icons">search</md-icon>
         </md-button>
     </form>
+    <div class="container-fluid" layout="row" layout-align="center center">
+        <ul>
+            <li ng-repeat="city in $ctrl.showCities() track by $index">{{city}}</il>
+        </ul>
+    </div>
 </div>
