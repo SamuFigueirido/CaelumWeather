@@ -6,8 +6,8 @@ import ngAria from 'angular-aria';
 import lastSearchesService from './app.lastSearchesService';
 import openWeatherMapsService from './app.openWeatherMapsService';
 import startPage from './start-page/start-page';
-import lastSearches from './app.lastSearches';
-import currentWeather from './app.currentWeather';
+import lastSearches from './values/lastSearches';
+import currentWeather from './values/currentWeather';
 import "material-icons/iconfont/material-icons.scss";
 import "angular-material/angular-material.scss";
 
