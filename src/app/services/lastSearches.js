@@ -7,12 +7,14 @@ export default class LastSearchesService {
         if (city === undefined || city.trim() === '') {
             return;
         } else {
-            const cityAux = (city.charAt(0).toUpperCase() + city.slice(1).toLowerCase()).trim();
+            const cityAux = city.trim().toLowerCase();
             if (this.lastSearches.includes(cityAux)) {
                 return;
             }
             this.lastSearches.unshift(cityAux);
-            this.lastSearches.pop();
+            if(this.lastSearches.length === 11) {
+                this.lastSearches.pop();
+            }
             localStorage.setItem('lastSearches', JSON.stringify(this.lastSearches));
         }
     }
