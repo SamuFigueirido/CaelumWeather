@@ -12,7 +12,7 @@ export default class LastSearchesService {
             return;
         }
         this.lastSearches.unshift(cityAux);
-        if (this.lastSearches.length === 11) {
+        if (this.lastSearches.length > 10) {
             this.lastSearches.pop();
         }
         localStorage.setItem('lastSearches', JSON.stringify(this.lastSearches));
