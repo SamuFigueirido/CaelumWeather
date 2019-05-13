@@ -52,14 +52,16 @@ h1,
 md-input-container:not(.md-input-invalid) .md-input {
   color: $salmon;
 }
-md-input-container:not(.md-input-invalid).md-input-focused .md-input {
-  border-color: $salmon;
-}
 md-input-container:not(.md-input-invalid) .md-input {
   border-color: rgb(172, 172, 172);
 }
-md-input-container:not(.md-input-invalid).md-input-focused label {
-  color: $salmon;
+md-input-container:not(.md-input-invalid).md-input-focused {
+  label {
+    color: $salmon;
+  }
+  .md-input {
+    border-color: $salmon;
+  }
 }
 md-input-container:not(.md-input-invalid) .md-input label {
   color: skyblue;
@@ -77,10 +79,7 @@ li {
   background-color: $salmon;
   color: white;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.26);
-  margin-bottom: 10px;
-  margin-top: 10px;
-  margin-right: 25px;
-  margin-left: 25px;
+  margin: 10px 25px;
   border-radius: 20px;
   &:not([disabled]):hover {
     background-color: rgb(197, 65, 65);
