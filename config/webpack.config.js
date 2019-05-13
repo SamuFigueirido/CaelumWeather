@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
-const dotenv = require('dotenv-webpack');
 module.exports = {
     entry: './src/app/app.module.js',
     output: {
@@ -11,9 +10,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, '../src/index.html'),
             filename: path.resolve(__dirname, '../dist/index.html')
-        }),
-        new webpack.DefinePlugin({
-            API_KEY: JSON.stringify(dotenv.parsed.API_KEY)
         })
     ],
     devServer: {

@@ -3,7 +3,7 @@ export default class OpenWeatherMapService {
         this.$http = $http;
     }
     getCurrentWeather(city) {
-        const apiKey = process.env.API_KEY;
+        const apiKey = '608c0e7fd9bce774dd414deb10de6e52';
         const request = {
             method: 'GET',
             url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`,
