@@ -3,8 +3,18 @@ import uirouter from '@uirouter/angularjs';
 import ngMaterial from 'angular-material';
 import ngAnimate from 'angular-animate';
 import ngAria from 'angular-aria';
-import weatherService from './app.weatherService';
+import lastSearchesService from './services/lastSearches';
+import openWeatherMapsService from './services/openWeatherMaps';
+import startPageModule from './start-page/start-page.module';
+import lastSearches from './values/lastSearches';
+import currentWeather from './values/currentWeather';
+import "material-icons/iconfont/material-icons.scss";
+import "angular-material/angular-material.scss";
 
 export default angular
-    .module('app', [uirouter, ngMaterial, ngAnimate, ngAria])
-    .factory('weatherService', weatherService);
+    .module('app', [uirouter, ngMaterial, ngAnimate, ngAria, startPageModule])
+    .factory('lastSearchesService', lastSearchesService)
+    .factory('openWeatherMapsService', openWeatherMapsService)
+    .value('lastSearches', lastSearches)
+    .value('currentWeather', currentWeather)
+    .name;
