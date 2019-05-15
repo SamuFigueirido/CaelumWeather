@@ -1,4 +1,4 @@
-const config = ['$stateProvider', function(provider) {
+const config = ['$urlRouterProvider','$stateProvider', function(urlRouterProvider, provider) {
     const startPage = {
         name: 'startPage',
         url: '/',
@@ -11,6 +11,7 @@ const config = ['$stateProvider', function(provider) {
         component: 'mainPage'
     }
 
+    urlRouterProvider.otherwise('/');
     provider.state(startPage);
     provider.state(mainPage);
 }];
