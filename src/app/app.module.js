@@ -14,6 +14,7 @@ import "material-icons/iconfont/material-icons.scss";
 import "angular-material/angular-material.scss";
 
 import logo from './components/logo-letters/logo-letters';
+import inputButton from './components/search-input-button/search-input-button';
 
 export default angular
     .module('app', [uirouter, ngMaterial, ngAnimate, ngAria, startPageModule, mainPageModule])
@@ -23,4 +24,5 @@ export default angular
     .value('lastSearches', lastSearches)
     .value('currentWeather', currentWeather)
     .component('logo', logo)
+    .component('inputButton', inputButton)
     .name;
