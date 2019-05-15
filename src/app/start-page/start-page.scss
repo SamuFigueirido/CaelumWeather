@@ -1,96 +1,101 @@
-$salmon: rgb(255, 82, 82);
-$brown: rgb(116, 32, 6);
+start-page {
+  $salmon: rgb(255, 82, 82);
+  $brown: rgb(116, 32, 6);
 
-html {
-  height: 100%;
-}
+  html {
+    height: 100%;
+  }
 
-.img {
-  background-image: url("../../resources/start-page.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-}
+  .img {
+    background-image: url("../../resources/start-page.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+  }
 
-body {
-  height: 100%;
-}
+  body {
+    height: 100%;
+  }
 
-.md-button {
-  &.md-fab {
-    background-color: $salmon;
-    &:not([disabled]):hover {
-      background-color: rgb(197, 65, 65);
+  .md-button {
+    &.md-fab {
+      background-color: $salmon;
+      &:not([disabled]):hover {
+        background-color: rgb(197, 65, 65);
+      }
     }
   }
-}
 
-h1,
-.reg {
-  padding-top: 10%;
-  text-shadow: 1px 1px 2px black;
-}
-
-.brown {
-  color: $brown;
-}
-
-.container {
-  height: 35px;
-  width: 350px;
-}
-
-md-input-container:not(.md-input-invalid) .md-input, md-input-container:not(.md-input-invalid).md-input-focused label, .salmon {
-  color: $salmon;
-}
-md-input-container:not(.md-input-invalid) .md-input {
-  border-color: rgb(172, 172, 172);
-}
-md-input-container:not(.md-input-invalid).md-input-focused .md-input{
-  border-color: $salmon;
-}
-md-input-container:not(.md-input-invalid) .md-input label, .skyblue {
-  color: skyblue;
-}
-
-.container-fluid {
-  padding-top: 10%;
-}
-
-li {
-  height: 15%;
-  list-style-type: none;
-  text-align: center;
-  border: 2px solid $salmon;
-  background-color: $salmon;
-  color: white;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.26);
-  margin: 10px 25px;
-  border-radius: 20px;
-  &:not([disabled]):hover {
-    background-color: rgb(197, 65, 65);
-    border-color: rgb(197, 65, 65);
+  h1,
+  .reg {
+    padding-top: 10%;
+    text-shadow: 1px 1px 2px black;
   }
-  vertical-align: middle;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
-  font-size: 2.5vh;
-  transform: scale(1.2);
-  text-transform: capitalize;
-}
 
-ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  .brown {
+    color: $brown;
+  }
 
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
+  .container {
+    height: 35px;
+    width: 350px;
+  }
 
-  -webkit-flex-flow: row wrap;
-  justify-content: space-around;
+  md-input-container:not(.md-input-invalid) .md-input,
+  md-input-container:not(.md-input-invalid).md-input-focused label,
+  .salmon {
+    color: $salmon;
+  }
+  md-input-container:not(.md-input-invalid) .md-input {
+    border-color: rgb(172, 172, 172);
+  }
+  md-input-container:not(.md-input-invalid).md-input-focused .md-input {
+    border-color: $salmon;
+  }
+  md-input-container:not(.md-input-invalid) .md-input label,
+  .skyblue {
+    color: skyblue;
+  }
+
+  .container-fluid {
+    padding-top: 10%;
+  }
+
+  li {
+    height: 15%;
+    list-style-type: none;
+    text-align: center;
+    border: 2px solid $salmon;
+    background-color: $salmon;
+    color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.26);
+    margin: 10px 25px;
+    border-radius: 20px;
+    &:not([disabled]):hover {
+      background-color: rgb(197, 65, 65);
+      border-color: rgb(197, 65, 65);
+    }
+    vertical-align: middle;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+    font-size: 2.5vh;
+    transform: scale(1.2);
+    text-transform: capitalize;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+  }
 }
