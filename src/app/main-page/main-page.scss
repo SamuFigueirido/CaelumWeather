@@ -129,7 +129,7 @@ main-page {
     background-color: $salmon;
     color: white;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.26);
-    margin: 10px 25px;
+    margin: 10px 5%;
     border-radius: 20px;
     &:not([disabled]):hover {
       background-color: rgb(197, 65, 65);
@@ -138,7 +138,7 @@ main-page {
     vertical-align: middle;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
-    font-size: 2.1vh;
+    font-size: 1.6vh;
     transform: scale(1.2);
     text-transform: capitalize;
   }
