@@ -12,6 +12,8 @@ start-page {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
+    overflow-x: hidden;
+    display: flex;
   }
 
   body {
