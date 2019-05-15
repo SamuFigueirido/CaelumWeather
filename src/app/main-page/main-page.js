@@ -1,7 +1,6 @@
 import template from './main-page.html';
 import './main-page.scss';
-// import controller from './main-page.controller';
-import controller from '../start-page/start-page.controller';
+import controller from './main-page.controller';
 
 const AppComponent = {
     template,
