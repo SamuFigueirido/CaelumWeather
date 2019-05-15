@@ -1,0 +1,40 @@
+<div class="img">
+    <div class="left">
+        <div class="title-container">
+            <div class="title" ui-sref="startPage" ui-sref-active="active">
+                <h1 class="brown">C</h1>
+                <h1 class="salmon">a</h1>
+                <h1 class="skyblue">e</h1>
+                <h1 class="brown">l</h1>
+                <h1 class="salmon">u</h1>
+                <h1 class="skyblue">m</h1>
+                <h1 class="brown">W</h1>
+                <h1 class="salmon">e</h1>
+                <h1 class="skyblue">a</h1>
+                <h1 class="brown">t</h1>
+                <h1 class="salmon">h</h1>
+                <h1 class="skyblue">e</h1>
+                <h1 class="brown">r</h1>
+                <a class="reg salmon">™</a>
+            </div>
+        </div>
+        <div class="form-container">
+            <form autocomplete="off" layout="row" layout-align="center center" ng-submit="$ctrl.searchCity($ctrl.city)">
+                <md-input-container class="input-container">
+                    <label>{{isSpanish ? 'Mostrarme el tiempo en...' : 'Show me the weather in...'}}</label>
+                    <input type="text" ng-model="$ctrl.city" />
+                </md-input-container>
+                <md-button type="submit" class="md-fab md-mini">
+                    <md-icon class="material-icons">search</md-icon>
+                </md-button>
+            </form>
+            <div class="container-fluid" layout="row" layout-align="left center">
+                <ul>
+                    <li ng-click="$ctrl.searchCity(city)" ng-repeat="city in $ctrl.showCities() track by $index">{{city}}</il>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+    </div>
+</div>
