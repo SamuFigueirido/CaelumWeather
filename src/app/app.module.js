@@ -15,6 +15,7 @@ import "angular-material/angular-material.scss";
 
 import logo from './components/logo-letters/logo-letters';
 import inputButton from './components/search-input-button/search-input-button';
+import listCities from './components/list-cities/list-cities';
 
 export default angular
     .module('app', [uirouter, ngMaterial, ngAnimate, ngAria, startPageModule, mainPageModule])
@@ -25,4 +26,5 @@ export default angular
     .value('currentWeather', currentWeather)
     .component('logo', logo)
     .component('inputButton', inputButton)
+    .component('listCities', listCities)
     .name;

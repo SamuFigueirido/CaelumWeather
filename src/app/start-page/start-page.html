@@ -1,9 +1,5 @@
 <div layout="column" class="img">
     <logo layout="row" layout-align="center center"></logo>
     <input-button></input-button>
-    <div class="container-fluid" layout="row" layout-align="center center">
-        <ul>
-            <li ng-click="$ctrl.searchCity(city)" ng-repeat="city in $ctrl.showCities() track by $index">{{city}}</il>
-        </ul>
-    </div>
+    <list-cities></list-cities>
 </div>
