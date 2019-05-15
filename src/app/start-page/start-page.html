@@ -15,7 +15,7 @@
         <h1 class="brown">r</h1>
         <a class="reg salmon">™</a>
     </div>
-    <form autocomplete="off" layout="row" layout-align="center center" ng-submit="$ctrl.searchCity()">
+    <form autocomplete="off" layout="row" layout-align="center center" ng-submit="$ctrl.searchCity($ctrl.city)">
         <md-input-container class="container">
             <label>{{isSpanish ? 'Mostrarme el tiempo en...' : 'Show me the weather in...'}}</label>
             <input type="text" ng-model="$ctrl.city"/>
@@ -26,7 +26,7 @@
     </form>
     <div class="container-fluid" layout="row" layout-align="center center">
         <ul>
-            <li ng-repeat="city in $ctrl.showCities() track by $index">{{city}}</il>
+            <li ng-click="$ctrl.searchCity(city)" ng-repeat="city in $ctrl.showCities() track by $index">{{city}}</il>
         </ul>
     </div>
 </div>
