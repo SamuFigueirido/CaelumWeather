@@ -1,11 +1,12 @@
-//Angular
+import "material-icons/iconfont/material-icons.scss";
+import "angular-material/angular-material.scss";
 import angular from 'angular';
+import uirouter from '@uirouter/angularjs';
 import ngMaterial from 'angular-material';
 import ngAnimate from 'angular-animate';
 import ngAria from 'angular-aria';
 
-//UI-Router and routes
-import uirouter from '@uirouter/angularjs';
+//Routes
 import config from './app.division';
 
 //Services
@@ -19,10 +20,6 @@ import mainPageModule from './main-page/main-page.module';
 //Values
 import lastSearches from './values/lastSearches';
 import currentWeather from './values/currentWeather';
-
-//External libraries
-import "material-icons/iconfont/material-icons.scss";
-import "angular-material/angular-material.scss";
 
 //Components
 import logoLetters from './components/logo-letters/logo-letters';
