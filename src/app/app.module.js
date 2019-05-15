@@ -19,4 +19,5 @@ export default angular
     .factory('lastSearchesService', lastSearchesService)
     .factory('openWeatherMapsService', openWeatherMapsService)
     .value('lastSearches', lastSearches)
-    .value('currentWeather', currentWeather);
+    .value('currentWeather', currentWeather)
+    .name;
