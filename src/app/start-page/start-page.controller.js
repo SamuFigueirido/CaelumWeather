@@ -1,11 +1,14 @@
 export default class StarPageController {
-    constructor(lastSearchesService, openWeatherMapsService) {
+    constructor(lastSearchesService, openWeatherMapsService, $state) {
         this.lastSearchesService = lastSearchesService;
         this.openWeatherMapsService = openWeatherMapsService;
+        this.$state = $state;
     }
 
-    searchCity() {
-        this.lastSearchesService.saveCity(this.city);
+    searchCity(city) {
+        if(this.lastSearchesService.saveCity(city)) {
+            this.$state.go('mainPage');
+        }
     }
 
     showCities() {
@@ -13,4 +16,4 @@ export default class StarPageController {
     }
 }
 
-StarPageController.$inject = ['lastSearchesService', 'openWeatherMapsService'];
+StarPageController.$inject = ['lastSearchesService', 'openWeatherMapsService', '$state'];
