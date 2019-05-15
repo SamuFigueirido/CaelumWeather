@@ -13,6 +13,8 @@ import currentWeather from './values/currentWeather';
 import "material-icons/iconfont/material-icons.scss";
 import "angular-material/angular-material.scss";
 
+import logo from './components/logo-letters/logo-letters';
+
 export default angular
     .module('app', [uirouter, ngMaterial, ngAnimate, ngAria, startPageModule, mainPageModule])
     .config(config)
@@ -20,4 +22,5 @@ export default angular
     .factory('openWeatherMapsService', openWeatherMapsService)
     .value('lastSearches', lastSearches)
     .value('currentWeather', currentWeather)
+    .component('logo', logo)
     .name;
