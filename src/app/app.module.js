@@ -13,7 +13,7 @@ import currentWeather from './values/currentWeather';
 import "material-icons/iconfont/material-icons.scss";
 import "angular-material/angular-material.scss";
 
-import logo from './components/logo-letters/logo-letters';
+import logoLetters from './components/logo-letters/logo-letters';
 import inputButton from './components/search-input-button/search-input-button';
 import listCities from './components/list-cities/list-cities';
 
@@ -24,7 +24,7 @@ export default angular
     .factory('openWeatherMapsService', openWeatherMapsService)
     .value('lastSearches', lastSearches)
     .value('currentWeather', currentWeather)
-    .component('logo', logo)
+    .component('logoLetters', logoLetters)
     .component('inputButton', inputButton)
     .component('listCities', listCities)
     .name;
