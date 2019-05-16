@@ -27,13 +27,17 @@ main-page {
 
 start-page {
     .title-container {
-        padding-top: 12%;
+        padding-top: 10%;
         padding-bottom: 25px;
     }
 
     .title {
         display: table;
         cursor: pointer;
+    }
+
+    h1 {
+        font-size: 40px;
     }
 
     h1,
