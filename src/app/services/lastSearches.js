@@ -9,13 +9,14 @@ export default class LastSearchesService {
         }
         const cityAux = city.trim().toLowerCase();
         if (this.lastSearches.includes(cityAux)) {
-            return;
+            return true;
         }
         this.lastSearches.unshift(cityAux);
         if (this.lastSearches.length > 10) {
             this.lastSearches.pop();
         }
         localStorage.setItem('lastSearches', JSON.stringify(this.lastSearches));
+        return true;
     }
 
     getCities() {

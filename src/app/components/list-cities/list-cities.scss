@@ -1,0 +1,58 @@
+@import "./src/resources/styles/_colors";
+
+main-page {
+    .container-fluid {
+        padding-top: 10%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    li {
+        margin: 10px 5%;
+        font-size: 1.6vh;
+    }
+}
+
+start-page {
+    .container-fluid {
+        padding-top: 10%;
+    }
+
+    li {
+        margin: 10px 25px;
+        font-size: 2.5vh;
+    }
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+li {
+    height: 15%;
+    list-style-type: none;
+    text-align: center;
+    border: 7px solid rgba(255, 82, 82, 0.1);
+    background-color: rgba(255, 82, 82, 0.8);
+    color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.26);
+
+    &:not([disabled]):hover {
+        background-color: rgba(197, 65, 65, 0.8);
+        border-color: rgba(197, 65, 65, 0.1);
+        color: rgb(209, 209, 209);
+    }
+
+    vertical-align: middle;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+    transform: scale(1.2);
+    text-transform: capitalize;
+}

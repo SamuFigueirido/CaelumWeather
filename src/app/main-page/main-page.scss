@@ -1,6 +1,7 @@
-start-page {
+main-page {
   html {
     height: 100%;
+    overflow: hidden;
   }
 
   .img {
@@ -15,5 +16,20 @@ start-page {
 
   body {
     height: 100%;
+  }  
+  
+  .left {
+    background-color: rgba(0, 0, 0, 0.384);
+    left: 0;
+    width: 25%;
+    height: 100%;
   }
+
+  .right {
+    background-color: rgba(235, 21, 21, 0.493);
+    right: 0;
+    width: 75%;
+    height: 100%;
+  }
+
 }
