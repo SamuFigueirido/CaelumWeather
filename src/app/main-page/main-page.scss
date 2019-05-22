@@ -1,3 +1,5 @@
+@import "./src/resources/styles/_colors";
+
 main-page {
   html {
     height: 100%;
@@ -26,10 +28,25 @@ main-page {
   }
 
   .right {
-    background-color: rgba(235, 21, 21, 0.493);
+    // background-color: rgba(235, 21, 21, 0.493);
     right: 0;
     width: 75%;
     height: 100%;
   }
 
+  .icon {
+    color: white;
+    -webkit-text-stroke: 4px $salmon;
+    font-size: 10vh;
+    height: 10px;
+    width: 35px;
+    padding: 10%;
+    padding-right: 17%; 
+  }
+
+  .separation {
+    padding: 20px 20%;
+    display: flex;
+    align-items: center;
+  }
 }
