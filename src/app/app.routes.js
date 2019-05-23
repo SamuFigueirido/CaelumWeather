@@ -7,7 +7,7 @@ const config = ['$urlRouterProvider','$stateProvider', function(urlRouterProvide
 
     const mainPage = {
         name: 'mainPage',
-        url: '/city',
+        url: '/search?city',
         component: 'mainPage'
     }
 

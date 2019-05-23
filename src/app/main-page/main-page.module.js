@@ -1,5 +1,5 @@
 import angular from 'angular';
-import mainPage from './main-page';
+import mainPage from './main-page.component';
 
 export default angular
     .module('appMainPage', [])

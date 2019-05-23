@@ -7,7 +7,7 @@ import ngAnimate from 'angular-animate';
 import ngAria from 'angular-aria';
 
 //Routes
-import config from './app.division';
+import config from './app.routes';
 
 //Modules
 import startPageModule from './start-page/start-page.module';

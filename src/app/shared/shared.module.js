@@ -1,18 +1,18 @@
 import angular from 'angular';
 
 //Services
-import lastSearchesService from '../services/lastSearches';
-import openWeatherMapsService from '../services/openWeatherMaps';
-import nearbyCitiesService from '../services/nearbyCities';
+import lastSearchesService from '../services/lastSearches.service';
+import openWeatherMapsService from '../services/openWeatherMaps.service';
+import nearbyCitiesService from '../services/nearbyCities.service';
 
 //Values
 import lastSearches from '../values/lastSearches';
 import currentWeather from '../values/currentWeather';
 
 //Components
-import logoLetters from '../components/logo-letters/logo-letters';
-import inputButton from '../components/search-input-button/search-input-button';
-import listCities from '../components/list-cities/list-cities';
+import logoLetters from '../components/logo-letters/logo-letters.component';
+import inputButton from '../components/search-input-button/search-input-button.component';
+import listCities from '../components/list-cities/list-cities.component';
 
 export default angular
     .module('appShared', [])

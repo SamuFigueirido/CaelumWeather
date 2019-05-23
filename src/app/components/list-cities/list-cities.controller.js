@@ -1,14 +1,14 @@
 export default class Controller {
-    constructor(lastSearchesService, nearbyCitiesService, $state) {
+    constructor($state, lastSearchesService, nearbyCitiesService) {
+        this.$state = $state;
         this.lastSearchesService = lastSearchesService;
         this.nearbyCitiesService = nearbyCitiesService;
-        this.$state = $state;
         this.cities = [];
     }
 
-    searchCity(city) {
-        console.log(city);
-        if (this.lastSearchesService.saveCity(city, this.lastSearchesService.getCities())) {
+    searchCity ($state) {
+        let param = $state.params.city;
+        if (this.lastSearchesService.saveCity(param, this.lastSearchesService.getCities())) {
             this.$state.go('mainPage');
         }
     }
@@ -32,4 +32,4 @@ export default class Controller {
     }
 }
 
-Controller.$inject = ['lastSearchesService', 'nearbyCitiesService', '$state'];
+Controller.$inject = ['$state', 'lastSearchesService', 'nearbyCitiesService']; 
