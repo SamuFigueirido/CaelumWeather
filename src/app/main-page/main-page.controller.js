@@ -17,8 +17,9 @@ export default class Controller {
         return this.lastSearchesService.getCities();
     }
 
-    showNearbyCities(city) {
-        this.nearbyCitiesService.getNearbyCities(city)
+    showNearbyCities($state) {
+        let param = $state.params.city;
+        this.nearbyCitiesService.getNearbyCities(param)
             .then(function (response) {
                 for (let i = 0; i > response.data.geonames.length; i++) {
                     cities.push(response.data.geonames[i].name);
