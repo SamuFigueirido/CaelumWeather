@@ -1,10 +1,14 @@
 import template from './list-cities.html';
 import './list-cities.scss';
-import controller from './list-cities.controller';
+import controller from '../../shared/shared.controller';
 
 const AppComponent = {
     template,
-    controller
+    controller,
+    bindings: {
+        recentSearches: '<',
+        nearCities: '<'
+    }
 };
 
 export default AppComponent;

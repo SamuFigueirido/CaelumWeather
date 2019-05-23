@@ -1,5 +1,6 @@
 <div class="container-fluid" layout="row" layout-align="center center">
     <ul>
-        <li ng-click="$ctrl.searchCity(city)" ng-repeat="city in $ctrl.showCities() track by $index">{{city}}</il>
+        <!-- <li ng-click="$ctrl.searchCity(city)" ng-repeat="city in $ctrl.showCities() track by $index">{{city}}</il> -->
+        <li ng-click="$ctrl.searchCity(city)" ng-repeat="city in $ctrl.recentSearches track by $index">{{city}}</il>
     </ul>
 </div>
