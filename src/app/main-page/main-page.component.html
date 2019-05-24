@@ -3,10 +3,11 @@
         <logo-letters></logo-letters>
         <div class="form-container">
             <input-button></input-button>
-            <list-cities list-cities="$ctrl.showCities()"></list-cities>
+            <list-cities list-cities="$ctrl.lastSearches"></list-cities>
             <div class="separation">
                 <md-icon class="material-icons icon">cloud</md-icon>
             </div>
+            <list-cities list-cities="$ctrl.nearbyCities"></list-cities>
         </div>
     </div>
     <div class="right">
