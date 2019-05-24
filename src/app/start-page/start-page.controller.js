@@ -1,19 +1,11 @@
-export default class Controller {
-    constructor($state, lastSearchesService) {
-        this.$state = $state;
+export default class StartPageController {
+    constructor(lastSearchesService) {
         this.lastSearchesService = lastSearchesService;
     }
 
-    searchCity ($state) {
-        let param = $state.params.city;
-        if (this.lastSearchesService.saveCity(param, this.lastSearchesService.getCities())) {
-            this.$state.go('mainPage');
-        }
-    }
-
-    showCities() {
-        return this.lastSearchesService.getCities();
+    $onInit() {
+        this.lastSearches = this.lastSearchesService.getCities();
     }
 }
 
-Controller.$inject = ['$state', 'lastSearchesService']; 
+StartPageController.$inject = ['lastSearchesService']; 

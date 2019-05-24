@@ -4,15 +4,10 @@ export default class Controller {
         this.$state = $state;
     }
 
-    searchCity(city) {
-        console.log(city);
-        if (this.lastSearchesService.saveCity(city, this.lastSearchesService.getCities())) {
-            this.$state.go('mainPage');
+    searchCity(cityAux) {
+        if (this.lastSearchesService.saveCity(cityAux, this.lastSearchesService.getCities())) {
+            this.$state.go('mainPage', {city: cityAux});
         }
-    }
-
-    showCities() {
-        return this.lastSearchesService.getCities();
     }
 }
 

@@ -1,36 +1,28 @@
-export default class Controller {
+export default class MainPageController {
     constructor($state, lastSearchesService, nearbyCitiesService) {
         this.$state = $state;
         this.lastSearchesService = lastSearchesService;
         this.nearbyCitiesService = nearbyCitiesService;
-        this.cities = [];
     }
 
-    searchCity ($state) {
-        let param = $state.params.city;
-        if (this.lastSearchesService.saveCity(param, this.lastSearchesService.getCities())) {
-            this.$state.go('mainPage');
+    $onInit() {
+        this.lastSearches = this.lastSearchesService.getCities();
+        if (this.$state.params.city) {
+            this.param = this.$state.params.city;
         }
-    }
-
-    showCities() {
-        return this.lastSearchesService.getCities();
-    }
-
-    showNearbyCities($state) {
-        let param = $state.params.city;
-        this.nearbyCitiesService.getNearbyCities(param)
+        this.lastSearchesService.saveCity(this.param, this.lastSearchesService.getCities());
+        this.$state.go('mainPage', {city: this.param});
+        this.nearbyCitiesService.getNearbyCities(this.param)
             .then(function (response) {
                 for (let i = 0; i > response.data.geonames.length; i++) {
-                    cities.push(response.data.geonames[i].name);
+                    nearbyCities.push(response.data.geonames[i].name);
                     console.log(response.data.geonames[i].name);
                 }
             })
             .catch(function (response) {
-                console.log(response.data);
+                console.log('Error: '+response.data);
             });
-        return cities;
     }
 }
 
-Controller.$inject = ['$state', 'lastSearchesService', 'nearbyCitiesService']; 
+MainPageController.$inject = ['$state', 'lastSearchesService', 'nearbyCitiesService'];
