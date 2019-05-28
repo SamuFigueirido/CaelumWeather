@@ -1,40 +1,51 @@
 export default class NearbyCitiesService {
     constructor($http) {
         this.$http = $http;
-        console.log(process.env.API_KEY);
     }
 
     getNearbyCities(city) {
-        let lat;
-        let lon;
+        let lat = 0;
+        let lon = 0;
         const apiKey = process.env.API_KEY;
         let request = {
             method: 'GET',
             url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`,
             params: {
                 units: 'metric',
-                mode: 'json',
+                mode: 'json'
             }
-        }
-        console.log(lat +"----"+ lon)
-        this.$http(request)
+        };
+        console.log('URL: ' + request.url);
+        const self = this;
+        return this.$http(request)
             .then(function (response) {
                 lat = response.data.coord.lat;
                 lon = response.data.coord.lon;
+                return self.getGeoNames(lat, lon);
             })
             .catch(function (response) {
-                console.log(response.data);
+                console.log(response.data.message);
             });
-        const username = process.env.USERNAME;
-        request = {
+    }
+
+    getGeoNames(lat, lon) {
+        const username = process.env.USER_NAME;
+        let request = {
             method: 'GET',
-            url: `http://api.geonames.org/findNearbyPlaceNameJSON?lat=${lat}&lng=${lon}&cities=cities10000&radius=10&maxRows=5&style=short&username=${username}`,
+            url: `http://api.geonames.org/findNearbyPlaceNameJSON?lat=${lat}&lng=${lon}&cities=cities10000&radius=10&maxRows=6&style=short&username=${username}`,
             params: {
                 units: 'metric',
-                mode: 'json',
+                mode: 'json'
             }
-        }
-        return this.$http(request);
+        };
+        console.log('URL: ' + request.url);
+        return this.$http(request)
+            .then(function (response) {
+                return response.data.geonames;
+            })
+            .catch(function (response) {
+                return response.data;
+            });
     }
 }
 
