@@ -3,6 +3,7 @@ export default class MainPageController {
         this.$state = $state;
         this.lastSearchesService = lastSearchesService;
         this.nearbyCitiesService = nearbyCitiesService;
+        this.nearbyCities = [];
     }
 
     $onInit() {
@@ -11,17 +12,21 @@ export default class MainPageController {
             this.param = this.$state.params.city;
         }
         this.lastSearchesService.saveCity(this.param, this.lastSearchesService.getCities());
-        this.$state.go('mainPage', {city: this.param});
+        this.$state.go('mainPage', {
+            city: this.param
+        });
+        let cities = [];
         this.nearbyCitiesService.getNearbyCities(this.param)
             .then(function (response) {
-                for (let i = 0; i > response.data.geonames.length; i++) {
-                    nearbyCities.push(response.data.geonames[i].name);
-                    console.log(response.data.geonames[i].name);
-                }
+                response.forEach(element => {
+                    cities.push(element.name);
+                });
             })
             .catch(function (response) {
-                console.log('Error: '+response.data);
+                console.log('There are no nearby cities');
             });
+        this.nearbyCities = cities;
+        console.log('Cities: ', cities);
     }
 }
 
