@@ -4,8 +4,6 @@ export default class NearbyCitiesService {
     }
 
     getNearbyCities(city) {
-        let lat = 0;
-        let lon = 0;
         const apiKey = process.env.API_KEY;
         let request = {
             method: 'GET',
@@ -19,8 +17,8 @@ export default class NearbyCitiesService {
         const self = this;
         return this.$http(request)
             .then(response => {
-                lat = response.data.coord.lat;
-                lon = response.data.coord.lon;
+                let lat = response.data.coord.lat;
+                let lon = response.data.coord.lon;
                 return self.getGeoNames(lat, lon);
             })
             .catch(response => {
