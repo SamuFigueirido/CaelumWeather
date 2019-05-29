@@ -1,4 +1,4 @@
-export default class Controller {
+export default class SearchInputButtonController {
     constructor(lastSearchesService, $state) {
         this.lastSearchesService = lastSearchesService;
         this.$state = $state;
@@ -11,4 +11,4 @@ export default class Controller {
     }
 }
 
-Controller.$inject = ['lastSearchesService', '$state'];
+SearchInputButtonController.$inject = ['lastSearchesService', '$state'];
