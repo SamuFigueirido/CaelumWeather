@@ -52,12 +52,7 @@ li {
         text-decoration: none;
     }
 
-    :visited {
-        color: white;
-        text-decoration: none;
-    }
-
-    :active {
+    :visited, :active {
         color: white;
         text-decoration: none;
     }
