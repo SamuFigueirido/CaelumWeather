@@ -12,9 +12,6 @@ export default class MainPageController {
             this.param = this.$state.params.city;
             this.lastSearchesService.saveCity(this.param, this.lastSearchesService.getCities());
         }
-        this.$state.go('mainPage', {
-            city: this.param
-        });
         let cities = [];
         this.nearbyCitiesService.getNearbyCities(this.param)
             .then(response => {
