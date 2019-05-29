@@ -13,7 +13,6 @@ export default class NearbyCitiesService {
                 mode: 'json'
             }
         };
-        console.log('URL: ' + request.url);
         const self = this;
         return this.$http(request)
             .then(response => {
@@ -36,7 +35,6 @@ export default class NearbyCitiesService {
                 mode: 'json'
             }
         };
-        console.log('URL: ' + request.url);
         return this.$http(request)
         .then(response => {
             return response.data.geonames;
