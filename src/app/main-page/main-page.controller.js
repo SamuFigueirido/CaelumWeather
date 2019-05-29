@@ -10,8 +10,8 @@ export default class MainPageController {
         this.lastSearches = this.lastSearchesService.getCities();
         if (this.$state.params.city) {
             this.param = this.$state.params.city;
+            this.lastSearchesService.saveCity(this.param, this.lastSearchesService.getCities());
         }
-        this.lastSearchesService.saveCity(this.param, this.lastSearchesService.getCities());
         this.$state.go('mainPage', {
             city: this.param
         });
