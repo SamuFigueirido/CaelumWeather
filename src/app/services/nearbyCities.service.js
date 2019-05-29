@@ -18,12 +18,12 @@ export default class NearbyCitiesService {
         console.log('URL: ' + request.url);
         const self = this;
         return this.$http(request)
-            .then(function (response) {
+            .then(response => {
                 lat = response.data.coord.lat;
                 lon = response.data.coord.lon;
                 return self.getGeoNames(lat, lon);
             })
-            .catch(function (response) {
+            .catch(response => {
                 console.log(response.data.message);
             });
     }
@@ -40,12 +40,12 @@ export default class NearbyCitiesService {
         };
         console.log('URL: ' + request.url);
         return this.$http(request)
-            .then(function (response) {
-                return response.data.geonames;
-            })
-            .catch(function (response) {
-                return response.data;
-            });
+        .then(response => {
+            return response.data.geonames;
+        })
+        .catch(response => {
+            return response.data;
+        });
     }
 }
 
