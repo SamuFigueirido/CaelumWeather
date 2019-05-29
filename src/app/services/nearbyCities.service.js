@@ -5,7 +5,7 @@ export default class NearbyCitiesService {
 
     getNearbyCities(city) {
         const apiKey = process.env.API_KEY;
-        let request = {
+        const request = {
             method: 'GET',
             url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`,
             params: {
@@ -28,7 +28,7 @@ export default class NearbyCitiesService {
 
     getGeoNames(lat, lon) {
         const username = process.env.USER_NAME;
-        let request = {
+        const request = {
             method: 'GET',
             url: `http://api.geonames.org/findNearbyPlaceNameJSON?lat=${lat}&lng=${lon}&cities=cities10000&radius=10&maxRows=6&style=short&username=${username}`,
             params: {
