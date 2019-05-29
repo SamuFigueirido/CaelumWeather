@@ -39,12 +39,9 @@ main-page {
 
   .icon {
     color: white;
-    -webkit-text-stroke: 0.5vh $salmon;
-    font-size: 6vh;
-    height: 10px;
-    width: 35px;
-    padding: 10%;
-    padding-right: 17%; 
+    -webkit-text-stroke: 2px $salmon;
+    font-size: 25px;
+    width: 27px;
   }
 
   .separation {
