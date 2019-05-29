@@ -28,10 +28,12 @@ main-page {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    border-right-style: solid;
+    border-color: $salmon;
+    border-width: 2px;
   }
 
   .right {
-    // background-color: rgba(235, 21, 21, 0.493);
     right: 0;
     width: 75%;
     height: 100%;
