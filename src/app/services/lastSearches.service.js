@@ -3,19 +3,19 @@ export default class LastSearchesService {
         this.lastSearches = lastSearches;
     }
 
-    saveCity(city, cities) {
+    saveCity(city) {
         if (city === undefined || city.trim() === '') {
             return;
         }
         const cityAux = city.trim().toLowerCase();
-        if (cities.includes(cityAux)) {
+        if (this.lastSearches.includes(cityAux)) {
             return true;
         }
-        cities.unshift(cityAux);
-        if (cities.length > 10) {
-            cities.pop();
+        this.lastSearches.unshift(cityAux);
+        if (this.lastSearches.length > 10) {
+            this.lastSearches.pop();
         }
-        localStorage.setItem('lastSearches', JSON.stringify(cities));
+        localStorage.setItem('lastSearches', JSON.stringify(this.lastSearches));
         return true;
     }
 
