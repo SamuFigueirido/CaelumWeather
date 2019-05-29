@@ -17,12 +17,12 @@ export default class MainPageController {
         });
         let cities = [];
         this.nearbyCitiesService.getNearbyCities(this.param)
-            .then(function (response) {
+            .then(response => {
                 response.forEach(element => {
                     cities.push(element.name);
                 });
             })
-            .catch(function (response) {
+            .catch(response => {
                 console.log('There are no nearby cities');
             });
         this.nearbyCities = cities;
