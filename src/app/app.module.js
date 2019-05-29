@@ -5,6 +5,7 @@ import uirouter from '@uirouter/angularjs';
 import ngMaterial from 'angular-material';
 import ngAnimate from 'angular-animate';
 import ngAria from 'angular-aria';
+import ngMessages from 'angular-messages';
 
 //Routes
 import config from './app.routes';
@@ -15,6 +16,6 @@ import mainPageModule from './main-page/main-page.module';
 import sharedModule from './shared/shared.module';
 
 export default angular
-    .module('app', [uirouter, ngMaterial, ngAnimate, ngAria, startPageModule, mainPageModule, sharedModule])
+    .module('app', [uirouter, ngMaterial, ngAnimate, ngAria, ngMessages, startPageModule, mainPageModule, sharedModule])
     .config(config)
     .name;
