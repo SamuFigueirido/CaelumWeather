@@ -13,7 +13,7 @@ import currentWeather from '../values/currentWeather';
 import logoLetters from '../components/logo-letters/logo-letters.component';
 import inputButton from '../components/search-input-button/search-input-button.component';
 import listCities from '../components/list-cities/list-cities.component';
-import weatherDay from '../components/weater-day/weather-day.component';
+import weatherDay from '../components/weather-day/weather-day.component';
 
 export default angular
     .module('appShared', [])
