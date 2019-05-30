@@ -1,14 +1,15 @@
-export default class StarPageController {
+export default class SearchInputButtonController {
     constructor(lastSearchesService, $state) {
         this.lastSearchesService = lastSearchesService;
         this.$state = $state;
     }
 
     searchCity(city) {
-        if(this.lastSearchesService.saveCity(city)) {
-            this.$state.go('mainPage');
+        const action = this.lastSearchesService.saveCity(city, this.lastSearchesService.getCities());
+        if (action) {
+            this.$state.go('mainPage', {city: city});
         }
     }
 }
 
-StarPageController.$inject = ['lastSearchesService', '$state'];
+SearchInputButtonController.$inject = ['lastSearchesService', '$state'];

@@ -1,5 +1,5 @@
 import angular from 'angular';
-import startPage from './start-page';
+import startPage from './start-page.component';
 
 export default angular
     .module('appStartPage', [])

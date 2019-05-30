@@ -1,0 +1,7 @@
+<div class="container-fluid" layout="row" layout-align="center center">
+    <ul>
+        <li ng-repeat="citySearched in $ctrl.listCities track by $index">
+            <a ui-sref="mainPage({city: citySearched})">{{citySearched}}</a>
+        </li>
+    </ul>
+</div>

@@ -1,3 +1,5 @@
+@import "./src/resources/styles/_colors";
+
 main-page {
   html {
     height: 100%;
@@ -16,20 +18,37 @@ main-page {
 
   body {
     height: 100%;
-  }  
+  }
   
   .left {
     background-color: rgba(0, 0, 0, 0.384);
     left: 0;
     width: 25%;
     height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .right {
-    background-color: rgba(235, 21, 21, 0.493);
     right: 0;
     width: 75%;
     height: 100%;
   }
 
+  .icon {
+    color: white;
+    -webkit-text-stroke: 0.5vh $salmon;
+    font-size: 6vh;
+    height: 10px;
+    width: 35px;
+    padding: 10%;
+    padding-right: 17%; 
+  }
+
+  .separation {
+    padding: 20px 20%;
+    display: flex;
+    align-items: center;
+  }
 }
