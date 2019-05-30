@@ -1,5 +1,6 @@
+@import "./src/resources/styles/_colors";
 @mixin border-md-tab {
     border-style: solid;
-    border-color: $salmon;
+    border-color: $color-all;
     border-width: 2px;
 }
