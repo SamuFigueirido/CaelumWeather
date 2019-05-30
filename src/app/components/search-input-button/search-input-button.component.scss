@@ -1,4 +1,5 @@
 @import "./src/resources/styles/_colors";
+@import "./src/resources/styles/_mixins";
 
 main-page {
     form {
@@ -6,7 +7,7 @@ main-page {
     }
 
     md-input-container:not(.md-input-invalid) .md-input {
-        color: $salmon;
+        color: $color-all;
     }
 
     md-input-container:not(.md-input-invalid) .md-input {
@@ -15,11 +16,11 @@ main-page {
 
     md-input-container:not(.md-input-invalid).md-input-focused {
         label {
-            color: $salmon;
+            color: $color-all;
         }
 
         .md-input {
-            border-color: $salmon;
+            border-color: $color-all;
         }
     }
 
@@ -51,7 +52,7 @@ start-page {
 
     md-input-container:not(.md-input-invalid) .md-input,
     md-input-container:not(.md-input-invalid).md-input-focused label {
-        color: $salmon;
+        color: $color-all;
     }
 
     md-input-container:not(.md-input-invalid) .md-input {
@@ -59,7 +60,7 @@ start-page {
     }
 
     md-input-container:not(.md-input-invalid).md-input-focused .md-input {
-        border-color: $salmon;
+        border-color: $color-all;
     }
 
     md-input-container:not(.md-input-invalid) .md-input label {
@@ -78,10 +79,16 @@ start-page {
 
 .md-button {
     &.md-fab {
-        background-color: $salmon;
+        background-color: $color-all;
 
-        &:not([disabled]):hover {
-            background-color: rgb(197, 65, 65);
+        &:not([disabled]) {
+            &:hover {
+                background-color: $color-hover-all;
+            }
+            &.md-focused {
+                background-color: $color-all;
+            }
         }
     }
 }
+

@@ -1,10 +1,5 @@
 @import "./src/resources/styles/_colors";
-$gray: rgba(0, 0, 0, 0.384);
-@mixin border-md-tab {
-    border-style: solid;
-    border-color: $salmon;
-    border-width: 2px;
-}
+@import "./src/resources/styles/_mixins";
 
 md-content {
     margin: {
@@ -12,17 +7,20 @@ md-content {
         left: 5%;
         right: 5%;
     }
+
     background-color: transparent;
 }
 
-md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active {
+md-tabs.md-default-theme .md-tab.md-active,
+md-tabs .md-tab.md-active {
     background: $gray;
     color: white;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: bold;
     margin-top: 0;
-    width: 30%;
+    width: 25%;
     border-style: none;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 md-tabs .md-tab {
@@ -34,7 +32,8 @@ md-tabs .md-tab {
     @include border-md-tab();
 }
 
-md-tabs [role="tabpanel"], md-tabs md-ink-bar {
+md-tabs [role="tabpanel"],
+md-tabs md-ink-bar {
     transition: none;
 }
 
@@ -55,8 +54,24 @@ md-tabs {
     overflow: hidden;
 }
 
-md-pagination-wrapper, md-tab-data, md-tabs-wrapper{
+md-pagination-wrapper,
+md-tab-data,
+md-tabs-wrapper {
     width: 611px;
+}
+
+md-prev-button {
+    md-icon {
+        padding-bottom: 640px;
+        padding-top: 25px;
+    }
+}
+
+md-next-button {
+    md-icon {
+        padding-bottom: 25px;
+        padding-top: 640px;
+    }
 }
 
 .day-container {
@@ -74,6 +89,6 @@ p {
     padding: 30px;
     background: rgba(0, 0, 0, 0.445);
     height: 75%;
-    color:rgba(255, 255, 255, 0.733);
+    color: rgba(255, 255, 255, 0.87);
     @include border-md-tab();
 }
