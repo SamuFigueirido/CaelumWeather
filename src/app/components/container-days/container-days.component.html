@@ -1,41 +1,11 @@
 <md-content class="tab-container">
-    <md-tabs layout="row"  layout-align="center">
-
-        <md-tab label="today">
+    <md-tabs layout="row" layout-align="center">
+        <md-tab label="{{day}}" ng-repeat="day in $ctrl.weatherFiveDays track by $index">
             <div class="day-container">
                 <div class="tile">
                     
                 </div>
             </div>
         </md-tab>
-        <md-tab label="tomorrow">
-            <div class="day-container">
-                <div class="tile">
-                    
-                </div>
-            </div>
-        </md-tab>
-        <md-tab label="third-day">
-            <div class="day-container">
-                <div class="tile">
-                    
-                </div>
-            </div>
-        </md-tab>
-        <md-tab label="fourth-day">
-            <div class="day-container">
-                <div class="tile">
-                    
-                </div>
-            </div>
-        </md-tab>
-        <md-tab label="fifth-day">
-            <div class="day-container">
-                <div class="tile">
-                    
-                </div>
-            </div>
-        </md-tab>
-
     </md-tabs>
 </md-content>
