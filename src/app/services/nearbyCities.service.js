@@ -21,7 +21,7 @@ export default class NearbyCitiesService {
                 return self.getGeoNames(lat, lon);
             })
             .catch(response => {
-                console.log(response.data.message);
+                console.error(response.data.message);
             });
     }
 
@@ -40,7 +40,7 @@ export default class NearbyCitiesService {
             return response.data.geonames;
         })
         .catch(response => {
-            return response.data;
+            console.error(response.data);
         });
     }
 }
