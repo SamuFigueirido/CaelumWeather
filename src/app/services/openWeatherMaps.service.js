@@ -1,19 +1,43 @@
-export default class OpenWeatherMapService {
+export default class OpenWeatherMapsService {
     constructor($http) {
         this.$http = $http;
+        this.apiKey = process.env.API_KEY;
     }
+
     getCurrentWeather(city) {
-        const apiKey = process.env.API_KEY;
         const request = {
             method: 'GET',
-            url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`,
+            url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.apiKey}`,
             params: {
                 units: 'metric',
                 mode: 'json',
             }
         }
-        return this.$http(request);
+        const self = this;
+        return this.$http(request)
+            .then(response => {
+                const { lat, lon} = response.data.coord;
+                return self.getWeatherFiveDays(lat, lon);
+            })
+            .catch(response => {
+                console.error(response.data.message);
+            });
+    }
+
+    getWeatherFiveDays(lat, lon) {
+        const request = {
+            method: 'GET',
+            url: `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${this.apiKey}`,
+            params: {
+                units: 'metric',
+                mode: 'json',
+            }
+        }
+        console.log('URL: ' + request.url);
+        return this.$http(request)
+        .then(response => response.data.list)
+        .catch(response => console.error(response.data));
     }
 }
 
-OpenWeatherMapService.$inject = ['$http'];
+OpenWeatherMapsService.$inject = ['$http'];
