@@ -19,9 +19,7 @@ export default class OpenWeatherMapsService {
                 const { lat, lon} = response.data.coord;
                 return self.getWeatherFiveDays(lat, lon);
             })
-            .catch(response => {
-                console.error(response.data.message);
-            });
+            .catch(response => console.error(response.data.message));
     }
 
     getWeatherFiveDays(lat, lon) {
