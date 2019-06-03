@@ -18,7 +18,6 @@ md-tabs .md-tab.md-active {
     font-size: 15px;
     font-weight: bold;
     margin-top: 0;
-    width: 100px;
     border-style: none;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -57,7 +56,7 @@ md-tabs {
 md-pagination-wrapper,
 md-tab-data,
 md-tabs-wrapper {
-    width: 611px;
+    width: 800px;
 }
 
 md-prev-button {
