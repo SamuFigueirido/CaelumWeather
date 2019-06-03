@@ -4,7 +4,7 @@ import './container-days.component.scss';
 const AppComponent = {
     template,
     bindings: {
-        weatherFiveDays: '<',
+        listDays: '<',
     }
 };
 
