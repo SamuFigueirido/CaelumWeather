@@ -5,10 +5,8 @@ export default class MainPageController {
         this.nearbyCitiesService = nearbyCitiesService;
         this.openWeatherMapsService = openWeatherMapsService;
         this.nearbyCities = [];
-
-        this.nameDays = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY', 'SUNDAY'];
-        this.weatherDays = [];
         this.days = [];
+        this.nameDays = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY', 'SUNDAY'];
     }
 
     $onInit() {
@@ -36,21 +34,36 @@ export default class MainPageController {
         this.openWeatherMapsService.getCurrentWeather(this.param)
             .then(response => {
                 console.log('Length:', response.length);
-                const days = [];
                 let cont = -1;
                 response.forEach(element => {
                     let flag = false;
                     const day = new Date(element.dt * 1000).getDate();
-                    days.forEach(item => {
+                    this.days.forEach(item => {
                         if (item.day === day) {
                             flag = true;
                         }
                     });
+
+                    const index = new Date(element.dt * 1000).getDay() - 1;
+                    let value = '';
+                    switch (index) {
+                        case 0:
+                            value = 'TODAY';
+                            break;
+                        case 1:
+                            value = 'TOMORROW';
+                            break;
+                        default:
+                            value = this.nameDays[index];
+                            break;
+                    }
+
                     if (!flag) {
                         cont++;
-                        days.push({
+                        this.days.push({
                             main: element.dt * 1000,
                             day: day,
+                            dayTitle: value,
                             hours: []
                         })
                     };
@@ -73,27 +86,10 @@ export default class MainPageController {
                             direction: element.wind.deg
                         }
                     };
-                    days[cont].hours.push(hourObject);
-                });
-                days.forEach(day => {
-                    // const date = new Date(day.main).getDate() + '/' + new Date(day.main).getMonth() + '/' + new Date(day.main).getFullYear();
-                    const index = new Date(day.main).getDay() - 1;
-                    let value = '';
-                    switch (index) {
-                        case 0:
-                                value = 'TODAY';
-                            break;
-                        case 1:
-                                value = 'TOMORROW';
-                            break;
-                        default:
-                                value = this.nameDays[index];
-                            break;
-                    }
-                    this.days.push(value);
-                });
 
-                console.log('Days:', days);
+                    this.days[cont].hours.push(hourObject);
+                });
+                console.log('Days:', this.days);
             })
         .catch(response => {
             console.log('There is no weather for this city');
