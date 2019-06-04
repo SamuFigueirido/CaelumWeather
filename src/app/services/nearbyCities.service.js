@@ -28,7 +28,7 @@ export default class NearbyCitiesService {
         const username = process.env.USER_NAME;
         const request = {
             method: 'GET',
-            url: `http://api.geonames.org/findNearbyPlaceNameJSON?lat=${lat}&lng=${lon}&cities=cities10000&radius=10&maxRows=6&style=short&username=${username}`,
+            url: `https://secure.geonames.org/findNearbyPlaceNameJSON?lat=${lat}&lng=${lon}&cities=cities10000&radius=10&maxRows=6&style=short&username=${username}`,
             params: {
                 units: 'metric',
                 mode: 'json'
