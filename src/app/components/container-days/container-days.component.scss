@@ -73,6 +73,31 @@ md-next-button {
     }
 }
 
+.title-date-country {
+    display: flex;
+    color: white;
+    text-shadow: $shadow-border;
+}
+
+.date-title {
+    width: 40%;
+    font-size: 20px;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-left: 10%;
+}
+
+.city-name {
+    width: 45%;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: right;
+    font-size: 25px;
+}
+
 .day-container {
     padding-bottom: 0px;
     margin-bottom: 0px;
@@ -95,15 +120,6 @@ md-next-button {
     @include border-md-tab();
     flex-wrap: wrap;
     justify-content: space-evenly;
-}
-
-.date-title {
-    padding-top: 20px;
-    padding-bottom: 15px;
-    padding-left: 10%;
-    color: white;
-    font-size: 20px;
-    text-shadow: $shadow-border;
 }
 
 .hour {

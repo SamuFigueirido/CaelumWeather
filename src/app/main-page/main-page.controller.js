@@ -44,6 +44,10 @@ export default class MainPageController {
                             main: element.dt * 1000,
                             day: day,
                             dayTitle: value,
+                            city: {
+                                name: 'aa',
+                                country: 'AA',
+                            },
                             hours: []
                         })
                     };
