@@ -31,9 +31,9 @@ export default class MainPageController {
                 const country = response.city.country;
                 response.list.forEach(element => {
                     let flag = false;
-                    const day = new Date(element.dt * 1000).getDate();
-                    this.days.forEach(item => {
-                        if (item.day === day) {
+                    const currentDay = new Date(element.dt * 1000).getDate();
+                    this.days.forEach(day => {
+                        if (day.day === currentDay) {
                             flag = true;
                         }
                     });
@@ -44,7 +44,7 @@ export default class MainPageController {
                         cont++;
                         this.days.push({
                             main: element.dt * 1000,
-                            day: day,
+                            day: currentDay,
                             dayTitle: value,
                             city: {
                                 name: name,
