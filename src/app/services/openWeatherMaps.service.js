@@ -32,7 +32,7 @@ export default class OpenWeatherMapsService {
             }
         }
         return this.$http(request)
-        .then(response => response.data.list)
+        .then(response => response.data)
         .catch(response => console.error(response.data));
     }
 }
