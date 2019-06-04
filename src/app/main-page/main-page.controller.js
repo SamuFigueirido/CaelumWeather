@@ -13,24 +13,18 @@ export default class MainPageController {
         this.lastSearches = this.lastSearchesService.getCities();
         if (this.$state.params.city) {
             this.param = this.$state.params.city;
+            this.lastSearchesService.saveCity(this.param);
         }
-        this.lastSearchesService.saveCity(this.param, this.lastSearchesService.getCities());
-        this.$state.go('mainPage', {
-            city: this.param
-        });
-        let cities = [];
         this.nearbyCitiesService.getNearbyCities(this.param)
-            .then(function (response) {
+            .then(response => {
                 response.forEach(element => {
-                    cities.push(element.name);
+                    this.nearbyCities.push(element.name);
                 });
             })
-            .catch(function (response) {
+            .catch(response => {
                 console.log('There are no nearby cities');
             });
-        this.nearbyCities = cities;
-        console.log('Cities: ', cities);
-
+            
         this.openWeatherMapsService.getCurrentWeather(this.param)
             .then(response => {
                 console.log('Length:', response.length);

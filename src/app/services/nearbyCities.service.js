@@ -4,10 +4,8 @@ export default class NearbyCitiesService {
     }
 
     getNearbyCities(city) {
-        let lat = 0;
-        let lon = 0;
         const apiKey = process.env.API_KEY;
-        let request = {
+        const request = {
             method: 'GET',
             url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`,
             params: {
@@ -15,22 +13,20 @@ export default class NearbyCitiesService {
                 mode: 'json'
             }
         };
-        console.log('URL: ' + request.url);
         const self = this;
         return this.$http(request)
-            .then(function (response) {
-                lat = response.data.coord.lat;
-                lon = response.data.coord.lon;
+            .then(response => {
+                const { lat, lon } = response.data.coord;
                 return self.getGeoNames(lat, lon);
             })
-            .catch(function (response) {
-                console.log(response.data.message);
+            .catch(response => {
+                console.error(response.data.message);
             });
     }
 
     getGeoNames(lat, lon) {
         const username = process.env.USER_NAME;
-        let request = {
+        const request = {
             method: 'GET',
             url: `http://api.geonames.org/findNearbyPlaceNameJSON?lat=${lat}&lng=${lon}&cities=cities10000&radius=10&maxRows=6&style=short&username=${username}`,
             params: {
@@ -38,14 +34,9 @@ export default class NearbyCitiesService {
                 mode: 'json'
             }
         };
-        console.log('URL: ' + request.url);
         return this.$http(request)
-            .then(function (response) {
-                return response.data.geonames;
-            })
-            .catch(function (response) {
-                return response.data;
-            });
+        .then(response => response.data.geonames)
+        .catch(response => console.error(response.data));
     }
 }
 

@@ -1,14 +1,15 @@
-export default class Controller {
+export default class SearchInputButtonController {
     constructor(lastSearchesService, $state) {
         this.lastSearchesService = lastSearchesService;
         this.$state = $state;
     }
 
-    searchCity(cityAux) {
-        if (this.lastSearchesService.saveCity(cityAux, this.lastSearchesService.getCities())) {
-            this.$state.go('mainPage', {city: cityAux});
+    searchCity(city) {
+        const action = this.lastSearchesService.saveCity(city, this.lastSearchesService.getCities());
+        if (action) {
+            this.$state.go('mainPage', {city: city});
         }
     }
 }
 
-Controller.$inject = ['lastSearchesService', '$state'];
+SearchInputButtonController.$inject = ['lastSearchesService', '$state'];
