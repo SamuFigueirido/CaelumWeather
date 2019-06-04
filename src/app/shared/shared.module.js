@@ -13,6 +13,7 @@ import currentWeather from '../values/currentWeather';
 import logoLetters from '../components/logo-letters/logo-letters.component';
 import inputButton from '../components/search-input-button/search-input-button.component';
 import listCities from '../components/list-cities/list-cities.component';
+import contactButton from '../components/contact-button/contact-button.component';
 
 export default angular
     .module('appShared', [])
@@ -24,4 +25,5 @@ export default angular
     .component('logoLetters', logoLetters)
     .component('inputButton', inputButton)
     .component('listCities', listCities)
+    .component('contactButton', contactButton)
     .name;
