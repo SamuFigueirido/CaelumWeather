@@ -1,12 +1,12 @@
 export default class MainPageController {
-    constructor($state, lastSearchesService, nearbyCitiesService, openWeatherMapsService) {
+    constructor($state, lastSearchesService, nearbyCitiesService, openWeatherMapsService, weatherContainerService) {
         this.$state = $state;
         this.lastSearchesService = lastSearchesService;
         this.nearbyCitiesService = nearbyCitiesService;
         this.openWeatherMapsService = openWeatherMapsService;
+        this.weatherContainerService = weatherContainerService;
         this.nearbyCities = [];
         this.days = [];
-        this.nameDays = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
     }
 
     $onInit() {
@@ -26,46 +26,7 @@ export default class MainPageController {
             });
         this.openWeatherMapsService.getCurrentWeather(this.param)
             .then(response => {
-                let cont = -1;
-                const name = response.city.name;
-                const country = response.city.country;
-                response.list.forEach(element => {
-                    let flag = false;
-                    const currentDay = new Date(element.dt * 1000).getDate();
-                    this.days.forEach(day => {
-                        if (day.day === currentDay) {
-                            flag = true;
-                        }
-                    });
-
-                    let value = this.nameDays[new Date(element.dt * 1000).getDay()];
-
-                    if (!flag) {
-                        cont++;
-                        this.days.push({
-                            main: element.dt * 1000,
-                            day: currentDay,
-                            dayTitle: value,
-                            city: {
-                                name,
-                                country
-                            },
-                            hours: []
-                        })
-                    };
-
-                    const hourObject = {
-                        hour: (element.dt * 1000),
-                        temperature: element.main.temp,
-                        humidity: element.main.humidity,
-                        weather: element.weather[0],
-                        clouds: element.clouds.all,
-                        wind_speed: element.wind.speed
-                    };
-                    this.days[cont].hours.push(hourObject);
-                });
-                this.days[0].dayTitle = 'TODAY';
-                this.days[1].dayTitle = 'TOMORROW';
+                this.days = this.weatherContainerService.getListToShow(response);
             })
             .catch(response => {
                 console.log('There is no weather for this city');
@@ -73,4 +34,4 @@ export default class MainPageController {
     }
 }
 
-MainPageController.$inject = ['$state', 'lastSearchesService', 'nearbyCitiesService', 'openWeatherMapsService'];
+MainPageController.$inject = ['$state', 'lastSearchesService', 'nearbyCitiesService', 'openWeatherMapsService', 'weatherContainerService'];

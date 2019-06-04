@@ -4,6 +4,7 @@ import angular from 'angular';
 import lastSearchesService from '../services/lastSearches.service';
 import openWeatherMapsService from '../services/openWeatherMaps.service';
 import nearbyCitiesService from '../services/nearbyCities.service';
+import weatherContainerService from '../services/weatherContainer.service';
 
 //Values
 import lastSearches from '../values/lastSearches';
@@ -20,6 +21,7 @@ export default angular
     .factory('lastSearchesService', lastSearchesService)
     .factory('openWeatherMapsService', openWeatherMapsService)
     .factory('nearbyCitiesService', nearbyCitiesService)
+    .factory('weatherContainerService', weatherContainerService)
     .value('lastSearches', lastSearches)
     .value('currentWeather', currentWeather)
     .component('logoLetters', logoLetters)
