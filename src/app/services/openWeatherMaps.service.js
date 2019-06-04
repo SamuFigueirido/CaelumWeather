@@ -7,7 +7,7 @@ export default class OpenWeatherMapsService {
     getCurrentWeather(city) {
         const request = {
             method: 'GET',
-            url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.apiKey}`,
+            url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.apiKey}`,
             params: {
                 units: 'metric',
                 mode: 'json',
@@ -25,7 +25,7 @@ export default class OpenWeatherMapsService {
     getWeatherFiveDays(lat, lon) {
         const request = {
             method: 'GET',
-            url: `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${this.apiKey}`,
+            url: `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${this.apiKey}`,
             params: {
                 units: 'metric',
                 mode: 'json',
