@@ -3,7 +3,7 @@
 
 md-content {
     margin: {
-        top: 5%;
+        top: 15px;
         left: 5%;
         right: 5%;
     }
@@ -19,7 +19,7 @@ md-tabs .md-tab.md-active {
     font-weight: bold;
     margin-top: 0;
     border-style: none;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: $shadow-border;
 }
 
 md-tabs .md-tab {
@@ -45,7 +45,7 @@ md-tabs md-ink-bar {
 }
 
 md-tabs {
-    height: 670px;
+    height: 700px;
     overflow-y: hidden;
 }
 
@@ -74,20 +74,70 @@ md-next-button {
 }
 
 .day-container {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
     background: $gray;
     border-radius: 15px;
-    height: 95%;
+    height: 100%;
     overflow: hidden;
-    @include border-md-tab();
     border-top-style: none;
 }
 
 .tile {
+    display: flex;
     margin: 40px;
+    margin-top: 0;
     border-radius: 15px;
-    padding: 30px;
+    padding-bottom: 20px;
+    padding-top: 35px;
     background: rgba(0, 0, 0, 0.445);
     height: 75%;
-    color: rgba(255, 255, 255, 0.87);
     @include border-md-tab();
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.date-title {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-left: 10%;
+    color: white;
+    font-size: 20px;
+    text-shadow: $shadow-border;
+}
+
+.hour {
+    color: white;
+    text-shadow: $shadow-border;
+    @include border-md-tab;
+    border-radius: 15px;
+    margin-right: 7px;
+    margin-left: 7px;
+    height: 200px;;
+    width: 150px;
+    background: rgba(138, 138, 138, 0.384);
+}
+
+.row {
+    &.weather {
+        color: rgba(255, 255, 255, 0.87);
+    }
+}
+
+.temp {
+    font-size: 25px;
+    padding: 15px;
+    margin-left: 14px;
+    margin-right: 14px;
+    vertical-align: top;
+}
+
+.weather-icon{
+    padding: 5px;
+    margin-left: 45px;
+    margin-right: 45px;
+}
+
+.weather-info {
+    padding: 20px;
 }
