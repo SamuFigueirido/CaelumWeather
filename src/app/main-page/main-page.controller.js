@@ -56,22 +56,11 @@ export default class MainPageController {
 
                     const hourObject = {
                         hour: (element.dt * 1000),
-                        temperature: {
-                            main: element.main.temp,
-                            temp_max: element.main.temp_max,
-                            temp_min: element.main.temp_min
-                        },
+                        temperature: element.main.temp,
                         humidity: element.main.humidity,
-                        weather: {
-                            main: element.weather[0].main,
-                            description: element.weather[0].description,
-                            icon: element.weather[0].icon
-                        },
+                        weather: element.weather[0],
                         clouds: element.clouds.all,
-                        wind: {
-                            speed: element.wind.speed,
-                            direction: element.wind.deg
-                        }
+                        wind_speed: element.wind.speed
                     };
                     this.days[cont].hours.push(hourObject);
                 });
