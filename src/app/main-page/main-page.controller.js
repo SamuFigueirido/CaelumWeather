@@ -26,7 +26,6 @@ export default class MainPageController {
             });
         this.openWeatherMapsService.getCurrentWeather(this.param)
             .then(response => {
-                console.log(response);
                 let cont = -1;
                 let name = response.city.name;
                 let country = response.city.country;
