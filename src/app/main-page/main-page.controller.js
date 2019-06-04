@@ -7,6 +7,7 @@ export default class MainPageController {
         this.weatherContainerService = weatherContainerService;
         this.nearbyCities = [];
         this.days = [];
+        this.nameDays = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
     }
 
     $onInit() {
@@ -28,9 +29,9 @@ export default class MainPageController {
             .then(response => {
                 this.days = this.weatherContainerService.getListToShow(response);
             })
-            .catch(response => {
-                console.log('There is no weather for this city');
-            });
+        .catch(response => {
+            console.log('There is no weather for this city');
+        });
     }
 }
 

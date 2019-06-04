@@ -1,10 +1,10 @@
 export default class OpenWeatherMapsService {
     constructor() {
-        this.days = [];
         this.nameDays = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
     }
 
     getListToShow(response) {
+        this.days = [];
         let cont = -1;
         const name = response.city.name;
         const country = response.city.country;
