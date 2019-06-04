@@ -29,11 +29,9 @@ start-page {
 
     li {
         &.list-cities {
-            margin: 10px 25px;
+            margin: 10px 16px;
             height: 19px;
             background-color: rgba(0, 0, 0, 0.55);
-            margin-left: 16px;
-            margin-right: 16px;
             :not([disabled]):hover {
                 font-size: 18px;
             }
