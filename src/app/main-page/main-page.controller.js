@@ -47,8 +47,8 @@ export default class MainPageController {
                             day: currentDay,
                             dayTitle: value,
                             city: {
-                                name: name,
-                                country: country,
+                                name,
+                                country
                             },
                             hours: []
                         })
