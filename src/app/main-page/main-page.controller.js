@@ -6,7 +6,7 @@ export default class MainPageController {
         this.openWeatherMapsService = openWeatherMapsService;
         this.nearbyCities = [];
         this.days = [];
-        this.nameDays = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY', 'SUNDAY'];
+        this.nameDays = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
     }
 
     $onInit() {
@@ -44,19 +44,7 @@ export default class MainPageController {
                         }
                     });
 
-                    const index = new Date(element.dt * 1000).getDay() - 1;
-                    let value = '';
-                    switch (index) {
-                        case 0:
-                            value = 'TODAY';
-                            break;
-                        case 1:
-                            value = 'TOMORROW';
-                            break;
-                        default:
-                            value = this.nameDays[index];
-                            break;
-                    }
+                    let value = this.nameDays[new Date(element.dt * 1000).getDay()];
 
                     if (!flag) {
                         cont++;
@@ -67,6 +55,7 @@ export default class MainPageController {
                             hours: []
                         })
                     };
+
                     const hourObject = {
                         hour: (element.dt * 1000),
                         temperature: {
@@ -76,9 +65,9 @@ export default class MainPageController {
                         },
                         humidity: element.main.humidity,
                         weather: {
-                            main: element.weather.main,
-                            description: element.weather.description,
-                            icon: element.weather.icon
+                            main: element.weather[0].main,
+                            description: element.weather[0].description,
+                            icon: element.weather[0].icon
                         },
                         clouds: element.clouds.all,
                         wind: {
@@ -86,14 +75,15 @@ export default class MainPageController {
                             direction: element.wind.deg
                         }
                     };
-
                     this.days[cont].hours.push(hourObject);
                 });
+                this.days[0].dayTitle = 'TODAY';
+                this.days[1].dayTitle = 'TOMORROW';
                 console.log('Days:', this.days);
             })
-        .catch(response => {
-            console.log('There is no weather for this city');
-        });
+            .catch(response => {
+                console.log('There is no weather for this city');
+            });
     }
 }
 
