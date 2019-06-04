@@ -31,7 +31,6 @@ export default class OpenWeatherMapsService {
                 mode: 'json',
             }
         }
-        console.log('URL: ' + request.url);
         return this.$http(request)
         .then(response => response.data.list)
         .catch(response => console.error(response.data));

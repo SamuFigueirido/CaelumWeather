@@ -24,10 +24,8 @@ export default class MainPageController {
             .catch(response => {
                 console.log('There are no nearby cities');
             });
-            
         this.openWeatherMapsService.getCurrentWeather(this.param)
             .then(response => {
-                console.log('Length:', response.length);
                 let cont = -1;
                 response.forEach(element => {
                     let flag = false;
@@ -73,7 +71,6 @@ export default class MainPageController {
                 });
                 this.days[0].dayTitle = 'TODAY';
                 this.days[1].dayTitle = 'TOMORROW';
-                console.log('Days:', this.days);
             })
             .catch(response => {
                 console.log('There is no weather for this city');
