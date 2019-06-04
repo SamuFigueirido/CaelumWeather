@@ -27,8 +27,8 @@ export default class MainPageController {
         this.openWeatherMapsService.getCurrentWeather(this.param)
             .then(response => {
                 let cont = -1;
-                let name = response.city.name;
-                let country = response.city.country;
+                const name = response.city.name;
+                const country = response.city.country;
                 response.list.forEach(element => {
                     let flag = false;
                     const day = new Date(element.dt * 1000).getDate();
@@ -78,9 +78,9 @@ export default class MainPageController {
                 this.days[0].dayTitle = 'TODAY';
                 this.days[1].dayTitle = 'TOMORROW';
             })
-            // .catch(response => {
-            //     console.log('There is no weather for this city');
-            // });
+            .catch(response => {
+                console.log('There is no weather for this city');
+            });
     }
 }
 
