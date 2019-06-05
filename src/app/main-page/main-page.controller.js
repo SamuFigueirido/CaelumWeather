@@ -1,9 +1,13 @@
 export default class MainPageController {
-    constructor($state, lastSearchesService, nearbyCitiesService) {
+    constructor($state, lastSearchesService, nearbyCitiesService, openWeatherMapsService, weatherContainerService) {
         this.$state = $state;
         this.lastSearchesService = lastSearchesService;
         this.nearbyCitiesService = nearbyCitiesService;
+        this.openWeatherMapsService = openWeatherMapsService;
+        this.weatherContainerService = weatherContainerService;
         this.nearbyCities = [];
+        this.days = [];
+        this.nameDays = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
     }
 
     $onInit() {
@@ -21,8 +25,14 @@ export default class MainPageController {
             .catch(response => {
                 console.log('There are no nearby cities');
             });
-        console.log('Cities: ', this.nearbyCities);
+        this.openWeatherMapsService.getCurrentWeather(this.param)
+            .then(response => {
+                this.days = this.weatherContainerService.getListToShow(response);
+            })
+        .catch(response => {
+            console.log('There is no weather for this city');
+        });
     }
 }
 
-MainPageController.$inject = ['$state', 'lastSearchesService', 'nearbyCitiesService'];
+MainPageController.$inject = ['$state', 'lastSearchesService', 'nearbyCitiesService', 'openWeatherMapsService', 'weatherContainerService'];

@@ -1,0 +1,30 @@
+<md-content class="tab-container">
+    <md-tabs layout="row" layout-align="center">
+        <md-tab label="{{day.dayTitle}}" ng-repeat="day in $ctrl.listDays track by $index">
+            <div class="day-container">
+                <div class="row title-date-country">
+                    <div class="date-title">
+                        {{day.main | date:'fullDate'}}
+                    </div>
+                    <a class="city-name">{{::day.city.name}}, {{::day.city.country}}</a>
+                </div>
+                <div class="tile">
+                    <div class="row hour" ng-repeat="dayHour in day.hours track by $index">
+                        {{dayHour.hour | date:'shortTime'}}
+                        <div class="row weather">
+                            <div class="icon-temp">
+                                <img class="weather-icon" layout="row" layout-align="center center"
+                                    ng-src='http://openweathermap.org/img/w/{{dayHour.weather.icon}}.png'>
+                                <a class="temp">{{dayHour.temperature}}°C</a>
+                            </div>
+                            <div class="weather-info">
+                                Clouds: {{dayHour.clouds}}% Humidity: {{dayHour.humidity}}% Wind:
+                                {{dayHour.wind_speed}}m/s
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </md-tab>
+    </md-tabs>
+</md-content>
