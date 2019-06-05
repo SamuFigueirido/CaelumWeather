@@ -1,23 +1,23 @@
 @import "./src/resources/styles/_colors";
+@import "./src/resources/styles/_mixins";
 
 main-page {
     .title-container {
         padding: 10% 15%;
+        :not([disabled]):hover {
+            .salmon, .skyblue, .brown {
+                color: $color-hover-all;
+                transition: all 0.3s cubic-bezier(0.54, 0.55, 0.54, 0.55);;
+            }
+        }
     }
 
     .title {
-        display: table;
         cursor: pointer;
     }
 
     h1 {
         font-size: 2.2vw;
-    }
-
-    h1,
-    .reg {
-        text-shadow: 1px 1px 2px black;
-        display: table-cell;
     }
 
     .reg {
@@ -27,23 +27,12 @@ main-page {
 
 start-page {
     .title-container {
-        padding-top: 10%;
+        padding-top: 7%;
         padding-bottom: 25px;
-    }
-
-    .title {
-        display: table;
-        cursor: pointer;
     }
 
     h1 {
         font-size: 40px;
-    }
-
-    h1,
-    .reg {
-        text-shadow: 1px 1px 2px black;
-        display: table-cell;
     }
 
     .reg {
@@ -51,14 +40,16 @@ start-page {
     }
 }
 
-.salmon {
-    color: $salmon;
+.title {
+    display: table;
 }
 
-.skyblue {
+h1,
+.reg {
+    display: table-cell;
+}
+
+.salmon, .skyblue, .brown, .reg {
     color: skyblue;
-}
-
-.brown {
-    color: $brown;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
