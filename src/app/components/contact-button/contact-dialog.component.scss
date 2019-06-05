@@ -1,15 +1,12 @@
 @import "./src/resources/styles/_colors";
+@import "./src/resources/styles/_mixins";
 
 md-dialog {
     height: 70%;
     width: 49%;
-    border-width: 2px;
-    border-color: skyblue;
     background-color: rgba(80, 80, 80, 0.753);
-    border-width: 2px;
-    border-style: solid;
-    border-color: skyblue;
     border-radius: 15px;
+    @include border-md-tab();
 }
 
 .user-container,
@@ -68,9 +65,7 @@ md-toolbar:not(.md-menu-toolbar) {
     padding: 20px;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     background-color: rgba(49, 49, 49, 0.603);
-    border-width: 2px;
-    border-style: solid;
-    border-color: skyblue;
+    @include border-md-tab();
     border-top: 0;
     border-right: 0;
     border-left: 0;
@@ -86,9 +81,7 @@ md-input-container>md-icon {
 
 .btn-submit, .btn-cancel {
     &.md-button {
-        border-style: solid;
-        border-color: skyblue;
-        border-width: 2px;
+        @include border-md-tab();
         border-radius: 7px;
         background-color:rgba(0, 0, 0, 0.445);
 
