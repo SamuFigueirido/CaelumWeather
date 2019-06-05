@@ -32,7 +32,7 @@ export default class MainPageController {
                 this.days = this.weatherContainerService.getListToShow(response);
             })
             .catch(response => {
-                console.log('There is no weather for this city');
+                console.error('There is no weather for this city', response);
             });
     }
 
