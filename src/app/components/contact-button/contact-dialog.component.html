@@ -1,0 +1,29 @@
+<md-toolbar>
+    <div class="title-toolbar-container" layout="row" layout-align="left">
+        Contact Support
+    </div>
+</md-toolbar>
+<form class="form-dialog" autocomplete="off" layout-align="center center">
+    <md-input-container class="user-container" layout="row" layout-align="left">
+        <label>Name</label>
+        <md-icon class="material-icons">account_circle</md-icon>
+        <input name="name" type="text" required autocomplete="off" />
+    </md-input-container>
+
+    <md-input-container class="subject-container" layout="row" layout-align="left">
+        <label>Subject</label>
+        <md-icon class="material-icons">search</md-icon>
+        <input name="subject" type="text" required autocomplete="off" />
+    </md-input-container>
+
+    <md-input-container class="content-container" layout-align="left">
+        <label>Issue</label>
+        <md-icon class="material-icons">search</md-icon>
+        <textarea name="issue" type="text" required autocomplete="off" max-rows="3" rows="3"></textarea>
+    </md-input-container>
+
+    <div class="buttons-container" layout="row" layout-align="center">
+        <md-button class="md-primary btn-submit" type="submit">Submit</md-button>
+        <md-button class="md-warn btn-cancel" type="reset">Cancel</md-button>
+    </div>
+</form>
