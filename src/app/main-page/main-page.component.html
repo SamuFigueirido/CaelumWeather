@@ -10,6 +10,11 @@
             <div class="title-nearby-cities" layout="row" layout-align="center">Nearby cities</div>
             <list-cities list-cities="$ctrl.nearbyCities"></list-cities>
         </div>
+        <div class="contact-container" layout="row" layout-align="center">
+            <md-button class="md-raised contact-button" ng-click="$ctrl.openContentDialog()">
+                Need help?
+            </md-button>
+        </div>
     </div>
     <div class="right">
         <container-days list-days="$ctrl.days"></container-days>

@@ -15,6 +15,7 @@ import logoLetters from '../components/logo-letters/logo-letters.component';
 import inputButton from '../components/search-input-button/search-input-button.component';
 import listCities from '../components/list-cities/list-cities.component';
 import weatherDay from '../components/container-days/container-days.component';
+import contactDialog from '../components/contact-button/contact-dialog.component';
 
 export default angular
     .module('appShared', [])
@@ -28,4 +29,5 @@ export default angular
     .component('inputButton', inputButton)
     .component('listCities', listCities)
     .component('containerDays', weatherDay)
+    .component('contactDialog', contactDialog)
     .name;
