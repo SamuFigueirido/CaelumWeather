@@ -1,9 +1,11 @@
 export default class MainPageController {
-    constructor($state, lastSearchesService, nearbyCitiesService) {
+    constructor($state, lastSearchesService, nearbyCitiesService, $mdDialog, $mdToast) {
         this.$state = $state;
         this.lastSearchesService = lastSearchesService;
         this.nearbyCitiesService = nearbyCitiesService;
         this.nearbyCities = [];
+        this.$mdDialog = $mdDialog;
+        this.$mdToast = $mdToast;
     }
 
     $onInit() {
@@ -23,6 +25,23 @@ export default class MainPageController {
             });
         console.log('Cities: ', this.nearbyCities);
     }
+
+    openContentDialog() {
+        this.$mdDialog.show({
+            template: '<contact-dialog></contact-dialog>',
+            clickOutsideToClose: true,
+            escapeToClose: true
+        })
+        .then((response) => {
+            console.log(response);
+            this.$mdToast.show(
+                this.$mdToast.simple()
+                .textContent('Message sent successfully!')
+                .hideDelay(3500)
+                .position('top right')
+            );
+        })
+    }
 }
 
-MainPageController.$inject = ['$state', 'lastSearchesService', 'nearbyCitiesService'];
+MainPageController.$inject = ['$state', 'lastSearchesService', 'nearbyCitiesService', '$mdDialog', '$mdToast'];
