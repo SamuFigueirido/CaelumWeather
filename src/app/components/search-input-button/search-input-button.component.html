@@ -1,9 +1,15 @@
 <form autocomplete="off" layout="row" layout-align="center center" ng-submit="$ctrl.searchCity($ctrl.city)">
     <md-input-container class="input-container">
-        <label>{{isSpanish ? 'Mostrarme el tiempo en...' : 'Show me the weather in...'}}</label>
+        <md-tooltip md-direction="bottom" md-delay="400">
+            Input to introduce a city
+        </md-tooltip>
+        <label>Show me the weather in...</label>
         <input type="text" ng-model="$ctrl.city" />
     </md-input-container>
     <md-button ng-click="$ctrl.searchCity($ctrl.city)" class="md-fab md-mini md-raised:not">
+        <md-tooltip md-direction="bottom" md-delay="400">
+            Search weather of the city
+        </md-tooltip>
         <md-icon class="material-icons">search</md-icon>
     </md-button>
 </form>
