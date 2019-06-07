@@ -6,24 +6,43 @@
 <form class="form-dialog" autocomplete="off" layout-align="center center">
     <md-input-container class="user-container" layout="row" layout-align="left">
         <label>Name</label>
+        <md-tooltip md-delay="400">
+            Your name
+        </md-tooltip>
         <md-icon class="material-icons">account_circle</md-icon>
         <input ng-model="name" type="text" required autocomplete="off" />
     </md-input-container>
 
     <md-input-container class="subject-container" layout="row" layout-align="left">
         <label>Subject</label>
+        <md-tooltip md-delay="400">
+            The subject of the issue
+        </md-tooltip>
         <md-icon class="material-icons">short_text</md-icon>
         <input ng-model="subject" type="text" required autocomplete="off" />
     </md-input-container>
 
     <md-input-container class="content-container" layout-align="left">
         <label>Issue</label>
+        <md-tooltip md-delay="400">
+            The issue summarized in three lines
+        </md-tooltip>
         <md-icon class="material-icons">comment</md-icon>
         <textarea ng-model="issue" type="text" required autocomplete="off" max-rows="3" rows="3"></textarea>
     </md-input-container>
 
     <div class="buttons-container" layout="row" layout-align="center">
-        <md-button class="md-primary btn-submit" type="submit" ng-click="$ctrl.submit()">Submit</md-button>
-        <md-button class="md-warn btn-cancel" type="reset" ng-click="$ctrl.cancel()">Cancel</md-button>
+        <md-button class="md-primary btn-submit" type="submit" ng-click="$ctrl.submit()">
+            <md-tooltip md-delay="400">
+                Submit
+            </md-tooltip>
+            Submit
+        </md-button>
+        <md-button class="md-warn btn-cancel" type="reset" ng-click="$ctrl.cancel()">
+            <md-tooltip md-delay="400">
+                Cancel
+            </md-tooltip>
+            Cancel
+        </md-button>
     </div>
 </form>

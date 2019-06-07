@@ -4,7 +4,7 @@
 md-dialog {
     height: 70%;
     width: 49%;
-    background-color: rgba(80, 80, 80, 0.753);
+    background-color: rgb(80, 80, 80);
     border-radius: 15px;
     @include border-md-tab();
 }
