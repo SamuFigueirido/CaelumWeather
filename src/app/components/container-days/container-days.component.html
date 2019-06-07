@@ -4,20 +4,47 @@
             <div class="day-container">
                 <div class="row title-date-country">
                     <div class="date-title">
+                        <md-tooltip md-direction="left" md-delay="400">
+                            Date
+                        </md-tooltip>
                         {{day.main | date:'fullDate'}}
                     </div>
-                    <a class="city-name">{{::day.city.name}}, {{::day.city.country}}</a>
+                    <a class="city-name">
+                        <md-tooltip md-direction="right" md-delay="400">
+                            City and country
+                        </md-tooltip>
+                        {{::day.city.name}}, {{::day.city.country}}
+                    </a>
                 </div>
                 <div class="tile">
                     <div class="row hour" ng-repeat="dayHour in day.hours track by $index">
-                        {{dayHour.hour | date:'shortTime'}}
+                        <div>
+                            <md-tooltip md-direction="left" md-delay="400">
+                                Time of the day
+                            </md-tooltip>
+                            {{dayHour.hour | date:'shortTime'}}
+                        </div>
                         <div class="row weather">
                             <div class="icon-temp">
-                                <img class="weather-icon" layout="row" layout-align="center center"
-                                    ng-src='http://openweathermap.org/img/w/{{dayHour.weather.icon}}.png'>
-                                <a class="temp">{{dayHour.temperature}}°C</a>
+                                <div>
+                                    <img class="weather-icon" layout="row" layout-align="center center"
+                                        ng-src='http://openweathermap.org/img/w/{{dayHour.weather.icon}}.png'>
+                                    <md-tooltip md-direction="right" md-delay="400">
+                                        {{dayHour.weather.description}}
+                                    </md-tooltip>
+                                </div>
+
+                                <a class="temp">
+                                    <md-tooltip md-direction="right" md-delay="400">
+                                        Temperature in degrees grades
+                                    </md-tooltip>
+                                    {{dayHour.temperature}}°C
+                                </a>
                             </div>
                             <div class="weather-info">
+                                    <md-tooltip md-direction="bottom" md-delay="400">
+                                            A little info of the weather
+                                        </md-tooltip>
                                 Clouds: {{dayHour.clouds}}% Humidity: {{dayHour.humidity}}% Wind:
                                 {{dayHour.wind_speed}}m/s
                             </div>
