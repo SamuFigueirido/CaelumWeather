@@ -11,9 +11,16 @@ const config = ['$urlRouterProvider','$stateProvider', function(urlRouterProvide
         component: 'mainPage'
     }
 
+    const errorPage = {
+        name: 'errorPage',
+        url: '/error404NotFound',
+        component: 'errorPage'
+    }
+
     urlRouterProvider.otherwise('/');
     provider.state(startPage);
     provider.state(mainPage);
+    provider.state(errorPage);
 }];
 
 export default config;
