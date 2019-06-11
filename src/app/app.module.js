@@ -22,5 +22,5 @@ import redux from './app.redux';
 export default angular
     .module('app', [uiRouter, ngRedux, ngMaterial, ngAnimate, ngAria, ngMessages, startPageModule, mainPageModule, sharedModule])
     .config(routes)
-    // .config(redux)
+    .config(redux)
     .name;
