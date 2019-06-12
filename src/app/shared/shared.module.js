@@ -1,7 +1,6 @@
 import angular from 'angular';
 
 //Services
-import lastSearchesService from '../services/lastSearches.service';
 import openWeatherMapsService from '../services/openWeatherMaps.service';
 import nearbyCitiesService from '../services/nearbyCities.service';
 import weatherContainerService from '../services/weatherContainer.service';
@@ -19,7 +18,6 @@ import contactDialog from '../components/contact-button/contact-dialog.component
 
 export default angular
     .module('appShared', [])
-    .factory('lastSearchesService', lastSearchesService)
     .factory('openWeatherMapsService', openWeatherMapsService)
     .factory('nearbyCitiesService', nearbyCitiesService)
     .factory('weatherContainerService', weatherContainerService)

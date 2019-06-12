@@ -1,11 +1,18 @@
 export default class StartPageController {
-    constructor(lastSearchesService) {
-        this.lastSearchesService = lastSearchesService;
+    constructor($ngRedux) {
+        this.$ngRedux = $ngRedux;
+        this.unsubscribe = this.$ngRedux.connect(this.mapStateToThis)(this);
     }
 
-    $onInit() {
-        this.lastSearches = this.lastSearchesService.getCities();
+    mapStateToThis(state) {
+        return {
+            lastSearches: state.default.lastSearches
+        };
+    }
+
+    $onDestroy() {
+        this.unsubscribe();
     }
 }
 
-StartPageController.$inject = ['lastSearchesService']; 
+StartPageController.$inject = ['$ngRedux'];
