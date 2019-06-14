@@ -16,6 +16,7 @@ import inputButton from '../components/search-input-button/search-input-button.c
 import listCities from '../components/list-cities/list-cities.component';
 import weatherDay from '../components/container-days/container-days.component';
 import contactDialog from '../components/contact-button/contact-dialog.component';
+import errorInfo from '../components/error-info/error-info.component';
 
 export default angular
     .module('appShared', [])
@@ -30,4 +31,5 @@ export default angular
     .component('listCities', listCities)
     .component('containerDays', weatherDay)
     .component('contactDialog', contactDialog)
+    .component('errorInfo', errorInfo)
     .name;
