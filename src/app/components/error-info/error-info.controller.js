@@ -4,7 +4,7 @@ export default class ErrorController {
     }
 
     $onInit() {
-
+        this.status = this.$state.params.status;
     }
 
     goStartPage() {
