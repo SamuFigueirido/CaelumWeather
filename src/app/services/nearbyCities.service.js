@@ -1,6 +1,7 @@
 export default class NearbyCitiesService {
-    constructor($http) {
+    constructor($http, $state) {
         this.$http = $http;
+        this.$state = $state;
     }
 
     getNearbyCities(city) {
@@ -20,7 +21,7 @@ export default class NearbyCitiesService {
                 return self.getGeoNames(lat, lon);
             })
             .catch(response => {
-                console.error(response.data.message);
+                throw response
             });
     }
 
@@ -36,8 +37,10 @@ export default class NearbyCitiesService {
         };
         return this.$http(request)
         .then(response => response.data.geonames)
-        .catch(response => console.error(response.data));
+        .catch(response => {
+            throw response
+        });
     }
 }
 
-NearbyCitiesService.$inject = ['$http'];
+NearbyCitiesService.$inject = ['$http', '$state'];
