@@ -7,20 +7,28 @@ const config = ['$urlRouterProvider','$stateProvider', function(urlRouterProvide
 
     const mainPage = {
         name: 'mainPage',
-        url: '/search?city',
         component: 'mainPage'
     }
 
-    const errorPage = {
-        name: 'errorPage',
-        url: '/error404NotFound',
-        component: 'errorPage'
+    const searchCity = {
+        parent: 'mainPage',
+        name: 'searchCity',
+        url: '/search?city',
+        component: 'containerDays'
+    }
+
+    const errorInfo = {
+        parent: 'mainPage',
+        name: 'errorInfo',
+        url: '/search?city/error',
+        component: 'errorInfo'
     }
 
     urlRouterProvider.otherwise('/');
     provider.state(startPage);
     provider.state(mainPage);
-    provider.state(errorPage);
+    provider.state(searchCity);
+    provider.state(errorInfo);
 }];
 
 export default config;
