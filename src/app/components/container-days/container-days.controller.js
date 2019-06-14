@@ -15,7 +15,7 @@ export default class ContainerDaysController {
             this.listDays = this.weatherContainerService.getListToShow(response);
         })
         .catch(response => {
-            this.$state.go('errorInfo');
+            this.$state.go('errorInfo', {city: this.param});
             console.error('There is no weather for this city', response);
         });
         return this.listDays;

@@ -24,7 +24,7 @@ export default class MainPageController {
                 });
             })
             .catch(response => {
-                this.$state.go('errorInfo');
+                this.$state.go('errorInfo', {city: this.param});
                 console.log('There are no nearby cities');
             });
     }
