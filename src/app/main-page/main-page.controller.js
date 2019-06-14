@@ -1,13 +1,9 @@
 export default class MainPageController {
-    constructor($state, lastSearchesService, nearbyCitiesService, openWeatherMapsService, weatherContainerService, $mdDialog, $mdToast) {
+    constructor($state, lastSearchesService, nearbyCitiesService, $mdDialog, $mdToast) {
         this.$state = $state;
         this.lastSearchesService = lastSearchesService;
         this.nearbyCitiesService = nearbyCitiesService;
-        this.openWeatherMapsService = openWeatherMapsService;
-        this.weatherContainerService = weatherContainerService;
         this.nearbyCities = [];
-        this.days = [];
-        this.nameDays = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
         this.$mdDialog = $mdDialog;
         this.$mdToast = $mdToast;
     }
@@ -27,13 +23,6 @@ export default class MainPageController {
             .catch(response => {
                 this.$state.go('errorInfo');
                 console.log('There are no nearby cities');
-            });
-        this.openWeatherMapsService.getCurrentWeather(this.param)
-            .then(response => {
-                this.days = this.weatherContainerService.getListToShow(response);
-            })
-            .catch(response => {
-                console.error('There is no weather for this city', response);
             });
     }
 
@@ -55,4 +44,4 @@ export default class MainPageController {
     }
 }
 
-MainPageController.$inject = ['$state', 'lastSearchesService', 'nearbyCitiesService', 'openWeatherMapsService', 'weatherContainerService', '$mdDialog', '$mdToast'];
+MainPageController.$inject = ['$state', 'lastSearchesService', 'nearbyCitiesService', '$mdDialog', '$mdToast'];
