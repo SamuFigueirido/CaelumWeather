@@ -1,6 +1,6 @@
 {
   "name": "CaelumWeather",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "World weather application",
   "main": "app.module.js",
   "private": true,
