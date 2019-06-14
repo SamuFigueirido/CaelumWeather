@@ -2,7 +2,7 @@
     <ul class="list-cities">
         <li class="list-cities" ng-repeat="citySearched in $ctrl.listCities track by $index">
             <a ui-sref="searchCity({city: citySearched})" ui-sref-opts="{reload: true}">
-                <md-tooltip md-delay="400">
+                <md-tooltip md-delay="400" class="tool-city">
                     City: {{citySearched}}
                 </md-tooltip>
                 {{citySearched}}
