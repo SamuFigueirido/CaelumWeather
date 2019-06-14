@@ -1,0 +1,123 @@
+error-info {
+    * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    #notfound {
+        position: relative;
+        height: 100vh;
+    }
+
+    #notfound .notfound {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .notfound {
+        max-width: 520px;
+        width: 100%;
+        text-align: center;
+        line-height: 1.4;
+        padding-bottom: 100px;
+    }
+
+    .notfound .notfound-404 {
+        height: 190px;
+    }
+
+    .notfound .notfound-404 h1 {
+        font-family: 'Montserrat', sans-serif;
+        text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+        font-size: 146px;
+        font-weight: 700;
+        margin: 0px;
+        color: #232323;
+    }
+
+    .notfound-404 {
+        display: -webkit-inline-box;
+    }
+
+    .notfound .notfound-404 h1>span {
+        display: inline-block;
+        width: 120px;
+        height: 120px;
+        background-image: url("../../../resources/emoji.png");
+        background-size: cover;
+        -webkit-transform: scale(1.4);
+        -ms-transform: scale(1.4);
+        transform: scale(1.4);
+        z-index: -1;
+    }
+
+    .notfound h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        margin: 0;
+        text-transform: uppercase;
+        color: #232323;
+        text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    }
+
+    .notfound p {
+        font-family: 'Montserrat', sans-serif;
+        color: #ffffff;
+        font-weight: 300;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+
+    .notfound a {
+        font-family: 'Montserrat', sans-serif;
+        display: inline-block;
+        cursor: pointer;
+        padding: 12px 30px;
+        font-weight: 700;
+        background-color: #f99827;
+        color: #fff;
+        border-radius: 40px;
+        text-decoration: none;
+        -webkit-transition: 0.2s all;
+        transition: 0.2s all;
+    }
+
+    .notfound a:hover {
+        background-color: #faa94c;
+    }
+
+    @media only screen and (max-width: 767px) {
+        .notfound .notfound-404 {
+            height: 115px;
+        }
+
+        .notfound .notfound-404 h1 {
+            font-size: 86px;
+        }
+
+        .notfound .notfound-404 h1>span {
+            width: 86px;
+            height: 86px;
+        }
+    }
+
+    .color-back {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.274);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-x: hidden;
+        display: flex;
+    }
+}

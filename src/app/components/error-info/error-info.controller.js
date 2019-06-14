@@ -1,0 +1,20 @@
+export default class ErrorController {
+    constructor ($state) {
+        this.$state = $state;
+    }
+
+    $onInit() {
+
+    }
+
+    goStartPage() {
+        this.$state.go('startPage');
+    }
+
+    reload() {
+        const city = this.$state.params.city;
+        this.$state.go('searchCity', {city: city}, {reload: true});
+    }
+}
+
+ErrorController.$inject = ['$state'];
