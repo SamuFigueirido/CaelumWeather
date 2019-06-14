@@ -1,18 +1,21 @@
+import {
+    saveCity
+} from '../redux/actions';
 export default class MainPageController {
-    constructor($state, lastSearchesService, nearbyCitiesService, $mdDialog, $mdToast) {
+    constructor($state, nearbyCitiesService, $mdDialog, $mdToast, $ngRedux) {
         this.$state = $state;
-        this.lastSearchesService = lastSearchesService;
         this.nearbyCitiesService = nearbyCitiesService;
         this.nearbyCities = [];
         this.$mdDialog = $mdDialog;
         this.$mdToast = $mdToast;
+        this.$ngRedux = $ngRedux;
+        this.unsubscribe = this.$ngRedux.connect(this.mapStateToThis)(this);
     }
 
     $onInit() {
-        this.lastSearches = this.lastSearchesService.getCities();
         if (this.$state.params.city) {
             this.param = this.$state.params.city;
-            this.lastSearchesService.saveCity(this.param);
+            this.$ngRedux.dispatch(saveCity(this.param));
         }
         this.nearbyCitiesService.getNearbyCities(this.param)
             .then(response => {
@@ -42,6 +45,16 @@ export default class MainPageController {
                 );
             })
     }
+
+    mapStateToThis(state) {
+        return {
+            lastSearches: state.default.lastSearches
+        };
+    }
+
+    $onDestroy() {
+        this.unsubscribe();
+    }
 }
 
-MainPageController.$inject = ['$state', 'lastSearchesService', 'nearbyCitiesService', '$mdDialog', '$mdToast'];
+MainPageController.$inject = ['$state', 'nearbyCitiesService', '$mdDialog', '$mdToast', '$ngRedux'];
