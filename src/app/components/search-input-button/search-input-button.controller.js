@@ -7,7 +7,7 @@ export default class SearchInputButtonController {
     searchCity(city) {
         const action = this.lastSearchesService.saveCity(city, this.lastSearchesService.getCities());
         if (action) {
-            this.$state.go('mainPage', {city: city});
+            this.$state.go('searchCity', {city: city}, {reload: true});
         }
     }
 }
