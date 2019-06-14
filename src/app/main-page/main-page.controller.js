@@ -25,6 +25,7 @@ export default class MainPageController {
                 });
             })
             .catch(response => {
+                this.$state.go('errorInfo');
                 console.log('There are no nearby cities');
             });
         this.openWeatherMapsService.getCurrentWeather(this.param)
