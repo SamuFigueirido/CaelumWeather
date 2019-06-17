@@ -1,11 +1,11 @@
 <md-toolbar>
     <div class="title-toolbar-container" layout="row" layout-align="left">
-        Contact Support
+        <span translate>CONTACT_DIALOG.TITLE</span>
     </div>
 </md-toolbar>
 <form class="form-dialog" autocomplete="off" layout-align="center center">
     <md-input-container class="user-container" layout="row" layout-align="left">
-        <label>Name</label>
+        <label translate>CONTACT_DIALOG.INPUT_NAME</label>
         <md-tooltip md-delay="400">
             Your name
         </md-tooltip>
@@ -14,7 +14,7 @@
     </md-input-container>
 
     <md-input-container class="subject-container" layout="row" layout-align="left">
-        <label>Subject</label>
+        <label translate>CONTACT_DIALOG.INPUT_SUBJECT</label>
         <md-tooltip md-delay="400">
             The subject of the issue
         </md-tooltip>
@@ -23,7 +23,7 @@
     </md-input-container>
 
     <md-input-container class="content-container" layout-align="left">
-        <label>Issue</label>
+        <label translate>CONTACT_DIALOG.INPUT_ISSUE</label>
         <md-tooltip md-delay="400">
             The issue summarized in three lines
         </md-tooltip>
@@ -33,16 +33,10 @@
 
     <div class="buttons-container" layout="row" layout-align="center">
         <md-button class="md-primary btn-submit" type="submit" ng-click="$ctrl.submit()">
-            <md-tooltip md-delay="400">
-                Submit
-            </md-tooltip>
-            Submit
+            <span translate>CONTACT_DIALOG.BUTTON_SUBMIT</span>
         </md-button>
         <md-button class="md-warn btn-cancel" type="reset" ng-click="$ctrl.cancel()">
-            <md-tooltip md-delay="400">
-                Cancel
-            </md-tooltip>
-            Cancel
+            <span translate>CONTACT_DIALOG.BUTTON_CANCEL</span>
         </md-button>
     </div>
 </form>
