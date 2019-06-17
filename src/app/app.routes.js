@@ -20,7 +20,7 @@ const config = ['$urlRouterProvider','$stateProvider', function(urlRouterProvide
     const errorInfo = {
         parent: 'mainPage',
         name: 'errorInfo',
-        url: '/error?status/search?city',
+        url: '/error?status,city',
         component: 'errorInfo'
     }
 
