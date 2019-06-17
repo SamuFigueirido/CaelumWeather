@@ -4,8 +4,10 @@ export default class SearchInputButtonController {
     }
 
     searchCity(city) {
-        this.$state.go('mainPage', {
+        this.$state.go('searchCity', {
             city: city
+        }, {
+            reload: true
         });
     }
 }

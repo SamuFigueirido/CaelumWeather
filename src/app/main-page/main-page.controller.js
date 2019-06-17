@@ -2,14 +2,10 @@ import {
     saveCity
 } from '../redux/actions';
 export default class MainPageController {
-    constructor($state, nearbyCitiesService, openWeatherMapsService, weatherContainerService, $mdDialog, $mdToast, $ngRedux) {
+    constructor($state, nearbyCitiesService, $mdDialog, $mdToast, $ngRedux) {
         this.$state = $state;
         this.nearbyCitiesService = nearbyCitiesService;
-        this.openWeatherMapsService = openWeatherMapsService;
-        this.weatherContainerService = weatherContainerService;
         this.nearbyCities = [];
-        this.days = [];
-        this.nameDays = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
         this.$mdDialog = $mdDialog;
         this.$mdToast = $mdToast;
         this.$ngRedux = $ngRedux;
@@ -28,14 +24,8 @@ export default class MainPageController {
                 });
             })
             .catch(response => {
+                this.$state.go('errorInfo', {city: this.param}, {status: response.status});
                 console.log('There are no nearby cities');
-            });
-        this.openWeatherMapsService.getCurrentWeather(this.param)
-            .then(response => {
-                this.days = this.weatherContainerService.getListToShow(response);
-            })
-            .catch(response => {
-                console.error('There is no weather for this city', response);
             });
     }
 
@@ -67,4 +57,4 @@ export default class MainPageController {
     }
 }
 
-MainPageController.$inject = ['$state', 'nearbyCitiesService', 'openWeatherMapsService', 'weatherContainerService', '$mdDialog', '$mdToast', '$ngRedux'];
+MainPageController.$inject = ['$state', 'nearbyCitiesService', '$mdDialog', '$mdToast', '$ngRedux'];

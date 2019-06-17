@@ -18,9 +18,6 @@ export default class NearbyCitiesService {
             .then(response => {
                 const { lat, lon } = response.data.coord;
                 return self.getGeoNames(lat, lon);
-            })
-            .catch(response => {
-                console.error(response.data.message);
             });
     }
 
@@ -35,8 +32,7 @@ export default class NearbyCitiesService {
             }
         };
         return this.$http(request)
-        .then(response => response.data.geonames)
-        .catch(response => console.error(response.data));
+        .then(response => response.data.geonames);
     }
 }
 
