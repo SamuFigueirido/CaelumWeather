@@ -42,4 +42,17 @@ export default {
         },
         "BUTTON_HELP": "¿Necesitas ayuda?"
     },
+    "CONTAINER_DAYS": {
+        "FULL_DATE": "{{day.main | date:'fullDate'}}",
+        "TOOLTIP": {
+            "DATE": "Fecha",
+            "CITY_COUNTRY": "Ciudad y país",
+            "DAY_TIME": "Hora del día",
+            "TEMPERATURE": "Temperatura en grados centígrados",
+            "WEATHER_INFO": "Una pequeña información del tiempo"
+        },
+        "CLOUDS": "Nubes",
+        "HUMIDITY": "Humedad",
+        "WIND": "Viento"
+    }
 }

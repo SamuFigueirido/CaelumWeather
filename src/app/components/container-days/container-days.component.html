@@ -5,13 +5,13 @@
                 <div class="row title-date-country">
                     <div class="date-title">
                         <md-tooltip md-direction="left" md-delay="400">
-                            Date
+                            <span translate>CONTAINER_DAYS.TOOLTIP.DATE</span>
                         </md-tooltip>
                         {{day.main | date:'fullDate'}}
                     </div>
                     <a class="city-name">
                         <md-tooltip md-direction="right" md-delay="400">
-                            City and country
+                            <span translate>CONTAINER_DAYS.TOOLTIP.CITY_COUNTRY</span>
                         </md-tooltip>
                         {{::day.city.name}}, {{::day.city.country}}
                     </a>
@@ -20,7 +20,7 @@
                     <div class="row hour" ng-repeat="dayHour in day.hours track by $index">
                         <div>
                             <md-tooltip md-direction="left" md-delay="400">
-                                Time of the day
+                                <span translate>CONTAINER_DAYS.TOOLTIP.DAY_TIME</span>
                             </md-tooltip>
                             {{dayHour.hour | date:'shortTime'}}
                         </div>
@@ -36,17 +36,18 @@
 
                                 <a class="temp">
                                     <md-tooltip md-direction="right" md-delay="400">
-                                        Temperature in degrees grades
+                                        <span translate>CONTAINER_DAYS.TOOLTIP.TEMPERATURE</span>
                                     </md-tooltip>
                                     {{dayHour.temperature}}°C
                                 </a>
                             </div>
                             <div class="weather-info">
                                     <md-tooltip md-delay="400">
-                                            A little info of the weather
+                                            <span translate>CONTAINER_DAYS.TOOLTIP.WEATHER_INFO</span>
                                         </md-tooltip>
-                                Clouds: {{dayHour.clouds}}% Humidity: {{dayHour.humidity}}% Wind:
-                                {{dayHour.wind_speed}}m/s
+                                <span translate>CONTAINER_DAYS.CLOUDS</span> {{dayHour.clouds}}%
+                                <span translate>CONTAINER_DAYS.HUMIDITY</span>: {{dayHour.humidity}}%
+                                <span translate>CONTAINER_DAYS.WIND</span>: {{dayHour.wind_speed}}m/s
                             </div>
                         </div>
                     </div>
