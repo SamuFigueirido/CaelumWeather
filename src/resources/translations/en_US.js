@@ -12,4 +12,10 @@ export default {
         "BUTTON_SUBMIT": "Submit",
         "BUTTON_CANCEL": "Cancel"
     },
+    "ERROR_INFO": {
+        "ERROR_SUBTITLE": "Oops! Something went wrong",
+        "ERROR_MESSAGE": "Sorry, but the page you are looking for does not exist, have been removed, name changed or is temporarily unavailable",
+        "BUTTON_BACK_HOMEPAGE": "Back to homepage",
+        "BUTTON_REFRESH": "Reload"
+    },
 }
