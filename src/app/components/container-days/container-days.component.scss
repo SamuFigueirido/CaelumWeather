@@ -28,6 +28,7 @@ md-tabs .md-tab {
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     margin-top: 8px;
+    color: rgb(200, 200, 200);
     @include border-md-tab();
 }
 
@@ -132,7 +133,7 @@ md-next-button {
     margin-left: 15px;
     height: 200px;
     width: 150px;
-    background: rgba(138, 138, 138, 0.384);
+    background: rgba(23, 101, 125, 0.2);
 }
 
 .row {
