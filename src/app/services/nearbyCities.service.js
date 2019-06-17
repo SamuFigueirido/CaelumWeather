@@ -1,7 +1,6 @@
 export default class NearbyCitiesService {
-    constructor($http, $state) {
+    constructor($http) {
         this.$http = $http;
-        this.$state = $state;
     }
 
     getNearbyCities(city) {
@@ -37,4 +36,4 @@ export default class NearbyCitiesService {
     }
 }
 
-NearbyCitiesService.$inject = ['$http', '$state'];
+NearbyCitiesService.$inject = ['$http'];
