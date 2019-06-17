@@ -18,9 +18,6 @@ export default class OpenWeatherMapsService {
             .then(response => {
                 const { lat, lon} = response.data.coord;
                 return self.getWeatherFiveDays(lat, lon);
-            })
-            .catch(response => {
-                throw response
             });
     }
 
@@ -34,10 +31,7 @@ export default class OpenWeatherMapsService {
             }
         }
         return this.$http(request)
-        .then(response => response.data)
-        .catch(response => {
-            throw response
-        });
+        .then(response => response.data);
     }
 }
 
