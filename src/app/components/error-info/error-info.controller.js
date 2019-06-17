@@ -13,7 +13,7 @@ export default class ErrorController {
 
     reload() {
         const city = this.$state.params.city;
-        this.$state.go('searchCity', {city: city}, {reload: true});
+        this.$state.go('searchCity', {city}, {reload: true});
     }
 }
 
