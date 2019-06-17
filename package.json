@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/SamuFigueirido/CaelumWeather#readme",
   "devDependencies": {
+    "angular-translate": "^2.18.1",
     "css-loader": "^2.1.1",
     "dotenv-webpack": "^1.7.0",
     "html-loader": "^0.5.5",
