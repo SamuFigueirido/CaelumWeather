@@ -35,4 +35,11 @@ export default {
             "BUTTON_SEARCH": "Search the weather of the city"
         }
     },
+    "MAIN_PAGE": {
+        "NEARBY_CITIES": "Nearby cities",
+        "TOOLTIP": {
+            "BUTTON_HELP": "Contact with us"
+        },
+        "BUTTON_HELP": "Need help?"
+    },
 }

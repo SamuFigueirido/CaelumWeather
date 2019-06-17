@@ -35,4 +35,11 @@ export default {
             "BUTTON_SEARCH": "Mostrar el tiempo de la ciudad introducida"
         }
     },
+    "MAIN_PAGE": {
+        "NEARBY_CITIES": "Ciudades cercanas",
+        "TOOLTIP": {
+            "BUTTON_HELP": "Contacta con nosotros"
+        },
+        "BUTTON_HELP": "¿Necesitas ayuda?"
+    },
 }
