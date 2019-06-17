@@ -23,4 +23,9 @@ export default {
             "CITY": "City"
         }
     },
+    "LOGO_LETTERS": {
+        "TOOLTIP": {
+            "TITLE": "Go to home"
+        }
+    },
 }

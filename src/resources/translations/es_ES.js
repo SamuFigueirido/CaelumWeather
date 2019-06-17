@@ -23,4 +23,9 @@ export default {
             "CITY": "Ciudad"
         }
     },
+    "LOGO_LETTERS": {
+        "TOOLTIP": {
+            "TITLE": "Ir a inicio"
+        }
+    },
 }
