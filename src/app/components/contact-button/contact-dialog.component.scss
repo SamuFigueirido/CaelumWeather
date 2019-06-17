@@ -82,7 +82,7 @@ md-input-container>md-icon {
     &.md-button {
         border-radius: 40px;
         background-color:$color-all;
-
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.26);
         &:not([disabled]):hover {
             color: rgba(255, 255, 255, 0.548);
             background-color: $color-hover-all;
