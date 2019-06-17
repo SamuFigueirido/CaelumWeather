@@ -1,14 +1,14 @@
 <form autocomplete="off" layout="row" layout-align="center center" ng-submit="$ctrl.searchCity($ctrl.city)">
     <md-input-container class="input-container">
         <md-tooltip md-delay="400">
-            Input to introduce a city
+            <span translate>SEARCH_INPUT_BUTTON.TOOLTIP.INPUT_SEARCH</span>
         </md-tooltip>
-        <label>Show me the weather in...</label>
+        <label><span translate>SEARCH_INPUT_BUTTON.INPUT_SEARCH</span></label>
         <input type="text" ng-model="$ctrl.city" />
     </md-input-container>
     <md-button ng-click="$ctrl.searchCity($ctrl.city)" class="md-fab md-mini md-raised:not">
         <md-tooltip md-delay="400">
-            Search weather of the city
+            <span translate>SEARCH_INPUT_BUTTON.TOOLTIP.BUTTON_SEARCH</span>
         </md-tooltip>
         <md-icon class="material-icons">search</md-icon>
     </md-button>

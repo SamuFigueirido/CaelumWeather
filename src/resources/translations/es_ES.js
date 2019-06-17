@@ -28,4 +28,11 @@ export default {
             "TITLE": "Ir a inicio"
         }
     },
+    "SEARCH_INPUT_BUTTON": {
+        "INPUT_SEARCH": "Muéstrame el tiempo en...",
+        "TOOLTIP": {
+            "INPUT_SEARCH": "Campo para introducir la ciudad",
+            "BUTTON_SEARCH": "Mostrar el tiempo de la ciudad introducida"
+        }
+    },
 }

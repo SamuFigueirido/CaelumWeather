@@ -28,4 +28,11 @@ export default {
             "TITLE": "Go to home"
         }
     },
+    "SEARCH_INPUT_BUTTON": {
+        "INPUT_SEARCH": "Show me the weather in...",
+        "TOOLTIP": {
+            "INPUT_SEARCH": "Input to introduce a city",
+            "BUTTON_SEARCH": "Search the weather of the city"
+        }
+    },
 }
