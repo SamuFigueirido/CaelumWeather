@@ -18,4 +18,9 @@ export default {
         "BUTTON_BACK_HOMEPAGE": "Back to homepage",
         "BUTTON_REFRESH": "Reload"
     },
+    "LIST_CITIES": {
+        "TOOLTIP": {
+            "CITY": "City"
+        }
+    },
 }
