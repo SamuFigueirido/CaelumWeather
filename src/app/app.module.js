@@ -6,6 +6,10 @@ import ngAnimate from 'angular-animate';
 import ngAria from 'angular-aria';
 import ngMessages from 'angular-messages';
 
+//Angular Translate
+import ngTranslate from 'angular-translate';
+import translations from './app.translate';
+
 //UI-Router
 import uiRouter from '@uirouter/angularjs';
 import routes from './app.routes';
@@ -20,7 +24,8 @@ import ngRedux from 'ng-redux';
 import redux from './app.redux';
 
 export default angular
-    .module('app', [uiRouter, ngRedux, ngMaterial, ngAnimate, ngAria, ngMessages, startPageModule, mainPageModule, sharedModule])
+    .module('app', [uiRouter, ngRedux, ngMaterial, ngAnimate, ngAria, ngMessages, ngTranslate, startPageModule, mainPageModule, sharedModule])
+    .config(translations)
     .config(routes)
     .config(redux)
     .name;
