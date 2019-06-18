@@ -7,15 +7,15 @@
             <div class="separation">
                 <md-icon class="material-icons icon">cloud</md-icon>
             </div>
-            <div class="title-nearby-cities" layout="row" layout-align="center">Nearby cities</div>
+            <div class="title-nearby-cities" layout="row" layout-align="center"><span translate>MAIN_PAGE.NEARBY_CITIES</span></div>
             <list-cities list-cities="$ctrl.nearbyCities"></list-cities>
         </div>
         <div class="contact-container" layout="row" layout-align="center">
             <md-button class="md-raised contact-button" ng-click="$ctrl.openContentDialog()">
                 <md-tooltip md-direction="left" md-delay="400">
-                    Contact with us
+                    <span translate>MAIN_PAGE.TOOLTIP.BUTTON_HELP</span>
                 </md-tooltip>
-                Need help?
+                <span translate>MAIN_PAGE.BUTTON_HELP</span>
             </md-button>
         </div>
     </div>

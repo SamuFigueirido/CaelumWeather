@@ -1,0 +1,102 @@
+{
+    "CONTACT_DIALOG": {
+        "TITLE": "Contact Support",
+        "INPUT_NAME": "Name",
+        "INPUT_SUBJECT": "Subject",
+        "INPUT_ISSUE": "Issue",
+        "TOOLTIP": {
+            "NAME": "Your name here",
+            "SUBJECT": "Subject of the issue",
+            "ISSUE": "The issue summarized in three lines"
+        },
+        "BUTTON_SUBMIT": "Submit",
+        "BUTTON_CANCEL": "Cancel"
+    },
+    "ERROR_INFO": {
+        "ERROR_SUBTITLE": "Oops! Something went wrong",
+        "ERROR_MESSAGE": "Sorry, but the page you are looking for does not exist, have been removed, name changed or is temporarily unavailable",
+        "BUTTON_BACK_HOMEPAGE": "Back to homepage",
+        "BUTTON_REFRESH": "Reload"
+    },
+    "LIST_CITIES": {
+        "TOOLTIP": {
+            "CITY": "City"
+        }
+    },
+    "LOGO_LETTERS": {
+        "TOOLTIP": {
+            "TITLE": "Go to home"
+        }
+    },
+    "SEARCH_INPUT_BUTTON": {
+        "INPUT_SEARCH": "Show me the weather in...",
+        "TOOLTIP": {
+            "INPUT_SEARCH": "Input to introduce a city",
+            "BUTTON_SEARCH": "Search the weather of the city"
+        }
+    },
+    "MAIN_PAGE": {
+        "NEARBY_CITIES": "Nearby cities",
+        "TOOLTIP": {
+            "BUTTON_HELP": "Contact with us"
+        },
+        "BUTTON_HELP": "Need help?"
+    },
+    "CONTAINER_DAYS": {
+        "NAME_DAYS": {
+            "SUNDAY": "Sunday",
+            "MONDAY": "Monday",
+            "TUESDAY": "Tuesday",
+            "WEDNESDAY": "Wednesday",
+            "THURSDAY": "Thursday",
+            "FRIDAY": "Friday",
+            "SATURDAY": "Saturday",
+            "TODAY": "Today",
+            "TOMORROW": "Tomorrow"
+        },
+        "MONTHS": {
+            "JANUARY": "January",
+            "FEBRUARY": "February",
+            "MARCH": "March",
+            "APRIL": "April",
+            "MAY": "May",
+            "JUNE": "June",
+            "JULY": "July",
+            "AUGUST": "August",
+            "SEPTEMBER": "September",
+            "OCTOBER": "October",
+            "NOVEMBER": "November",
+            "DECEMBER": "December"
+        },
+        "TOOLTIP": {
+            "DATE": "Date",
+            "CITY_COUNTRY": "City and country",
+            "DAY_TIME": "Time of the day",
+            "TEMPERATURE": "Temperature in degrees grades",
+            "WEATHER_INFO": "A little info of the weather",
+            "WEATHER_ICONS": {
+                "01D": "Clear sky",
+                "02D": "Few clouds",
+                "03D": "Scattered clouds",
+                "04D": "Broken clouds",
+                "09D": "Shower rain",
+                "10D": "Rain",
+                "11D": "Thunderstorm",
+                "13D": "Snow",
+                "50D": "Mist",
+                "01N": "Clear sky",
+                "02N": "Few clouds",
+                "03N": "Scattered clouds",
+                "04N": "Broken clouds",
+                "09N": "Shower rain",
+                "10N": "Rain",
+                "11N": "Thunderstorm",
+                "13N": "Snow",
+                "50N": "Mist"
+            }
+        },
+        "CLOUDS": "Clouds",
+        "HUMIDITY": "Humidity",
+        "WIND": "Wind"
+    }
+}
