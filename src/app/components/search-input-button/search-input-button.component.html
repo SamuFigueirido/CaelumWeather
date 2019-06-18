@@ -3,7 +3,7 @@
         <md-tooltip md-delay="400">
             <span translate>SEARCH_INPUT_BUTTON.TOOLTIP.INPUT_SEARCH</span>
         </md-tooltip>
-        <label><span translate>SEARCH_INPUT_BUTTON.INPUT_SEARCH</span></label>
+        <label><md-icon class="material-icons locat-icon">location_on</md-icon><span translate>SEARCH_INPUT_BUTTON.INPUT_SEARCH</span></label>
         <input type="text" ng-model="$ctrl.city" />
     </md-input-container>
     <md-button ng-click="$ctrl.searchCity($ctrl.city)" class="md-fab md-mini md-raised:not">

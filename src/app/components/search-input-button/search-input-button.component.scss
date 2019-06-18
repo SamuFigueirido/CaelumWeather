@@ -14,7 +14,7 @@ main-page {
         border-color: rgba(255, 255, 255, 0.6);
     }
 
-    label {
+    label, .locat-icon {
         color: rgba(255, 255, 255, 0.6);
     }
 
@@ -71,6 +71,10 @@ start-page {
         color: skyblue;
     }
 
+    .locat-icon {
+        color: rgba(23, 101, 125, 0.8);
+    }
+
     form {
         padding-top: 2.5%;
         padding-bottom: 2.5%;
@@ -80,6 +84,10 @@ start-page {
         height: 35px;
         width: 550px;
     }
+}
+
+.locat-icon {
+    padding-bottom: 5px;
 }
 
 .md-button {
