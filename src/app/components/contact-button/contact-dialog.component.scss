@@ -2,8 +2,7 @@
 @import "./src/resources/styles/_mixins";
 
 md-dialog {
-    height: 70%;
-    width: 49%;
+    width: 40%;
     background-color: rgb(14, 59, 73);
     border-radius: 15px;
     @include border-md-tab();
