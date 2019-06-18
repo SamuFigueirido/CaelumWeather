@@ -37,7 +37,7 @@ export default class OpenWeatherMapsService {
 
             const hourObject = {
                 hour: (element.dt * 1000),
-                temperature: element.main.temp,
+                temperature: Math.ceil(element.main.temp),
                 humidity: element.main.humidity,
                 weather: element.weather[0],
                 clouds: element.clouds.all,
