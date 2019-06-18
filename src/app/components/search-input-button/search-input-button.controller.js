@@ -4,11 +4,13 @@ export default class SearchInputButtonController {
     }
 
     searchCity(city) {
+        if(city.trim() !== '') {
         this.$state.go('searchCity', {
             city: city
         }, {
             reload: true
         });
+    }
     }
 }
 
