@@ -7,7 +7,10 @@
                         <md-tooltip md-direction="left" md-delay="400">
                             <span translate>CONTAINER_DAYS.TOOLTIP.DATE</span>
                         </md-tooltip>
-                        <span class="full-date">{{day.main | date:'fullDate'}}</span>
+                        <span translate="CONTAINER_DAYS.NAME_DAYS.{{day.main | date: 'EEEE' | uppercase}}"></span>,
+                        <span>{{day.main | date: 'dd'}}</span>
+                        <span translate="CONTAINER_DAYS.MONTHS.{{day.main | date: 'MMMM' | uppercase}}"></span>
+                        <span>{{day.main | date: 'yyyy'}}</span>
                     </div>
                     <a class="city-name">
                         <md-tooltip md-direction="right" md-delay="400">
@@ -42,9 +45,9 @@
                                 </a>
                             </div>
                             <div class="weather-info">
-                                    <md-tooltip md-delay="400">
-                                            <span translate>CONTAINER_DAYS.TOOLTIP.WEATHER_INFO</span>
-                                        </md-tooltip>
+                                <md-tooltip md-delay="400">
+                                    <span translate>CONTAINER_DAYS.TOOLTIP.WEATHER_INFO</span>
+                                </md-tooltip>
                                 <span translate>CONTAINER_DAYS.CLOUDS</span> {{dayHour.clouds}}%
                                 <span translate>CONTAINER_DAYS.HUMIDITY</span>: {{dayHour.humidity}}%
                                 <span translate>CONTAINER_DAYS.WIND</span>: {{dayHour.wind_speed}}m/s
