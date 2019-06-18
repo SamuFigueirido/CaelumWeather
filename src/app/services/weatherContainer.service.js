@@ -1,6 +1,8 @@
 export default class OpenWeatherMapsService {
-    constructor() {
-        this.nameDays = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
+    constructor($filter) {
+        this.nameDays = [$filter('translate')('CONTAINER_DAYS.NAME_DAYS.SUNDAY'), $filter('translate')('CONTAINER_DAYS.NAME_DAYS.MONDAY'), $filter('translate')('CONTAINER_DAYS.NAME_DAYS.TUESDAY'), $filter('translate')('CONTAINER_DAYS.NAME_DAYS.WEDNESDAY'), $filter('translate')('CONTAINER_DAYS.NAME_DAYS.THURSDAY'), $filter('translate')('CONTAINER_DAYS.NAME_DAYS.FRIDAY'), $filter('translate')('CONTAINER_DAYS.NAME_DAYS.SATURDAY')];
+        this.today = $filter('translate')('CONTAINER_DAYS.NAME_DAYS.TODAY');
+        this.tomorrow = $filter('translate')('CONTAINER_DAYS.NAME_DAYS.TOMORROW');
     }
 
     getListToShow(response) {
@@ -43,11 +45,11 @@ export default class OpenWeatherMapsService {
             };
             this.days[cont].hours.push(hourObject);
         });
-        this.days[0].dayTitle = 'TODAY';
-        this.days[1].dayTitle = 'TOMORROW';
+        this.days[0].dayTitle = this.today;
+        this.days[1].dayTitle = this.tomorrow;
 
         return this.days;
     }
 }
 
-OpenWeatherMapsService.$inject = [];
+OpenWeatherMapsService.$inject = ['$filter'];

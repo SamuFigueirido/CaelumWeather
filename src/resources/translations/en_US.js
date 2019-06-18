@@ -43,7 +43,17 @@ export default {
         "BUTTON_HELP": "Need help?"
     },
     "CONTAINER_DAYS": {
-        "FULL_DATE": "{{day.main | date:'fullDate'}}",
+        "NAME_DAYS": {
+            "SUNDAY": "Sunday",
+            "MONDAY": "Monday",
+            "TUESDAY": "Tuesday",
+            "WEDNESDAY": "Wednesday",
+            "THURSDAY": "Thursday",
+            "FRIDAY": "Friday",
+            "SATURDAY": "Saturday",
+            "TODAY": "Today",
+            "TOMORROW": "Tomorrow"
+        },
         "TOOLTIP": {
             "DATE": "Date",
             "CITY_COUNTRY": "City and country",
