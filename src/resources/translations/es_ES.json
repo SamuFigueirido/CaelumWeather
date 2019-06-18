@@ -1,4 +1,4 @@
-export default {
+{
     "CONTACT_DIALOG": {
         "TITLE": "Soporte técnico",
         "INPUT_NAME": "Nombre",
@@ -81,7 +81,6 @@ export default {
                 "04D": "Nublado",
                 "09D": "Chaparrón",
                 "10D": "Lluvia",
-                "10D": "Lluvia",
                 "11D": "Tormenta",
                 "13D": "Nieve",
                 "50D": "Niebla",
@@ -93,7 +92,7 @@ export default {
                 "10N": "Lluvia",
                 "11N": "Tormenta",
                 "13N": "Nieve",
-                "50N": "Niebla",
+                "50N": "Niebla"
             }
         },
         "CLOUDS": "Nubes",

@@ -1,4 +1,4 @@
-export default {
+{
     "CONTACT_DIALOG": {
         "TITLE": "Contact Support",
         "INPUT_NAME": "Name",
@@ -92,7 +92,7 @@ export default {
                 "10N": "Rain",
                 "11N": "Thunderstorm",
                 "13N": "Snow",
-                "50N": "Mist",
+                "50N": "Mist"
             }
         },
         "CLOUDS": "Clouds",
