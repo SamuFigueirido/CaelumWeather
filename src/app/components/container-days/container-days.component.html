@@ -33,7 +33,8 @@
                                     <img class="weather-icon" layout="row" layout-align="center center"
                                         ng-src='http://openweathermap.org/img/w/{{dayHour.weather.icon}}.png'>
                                     <md-tooltip md-direction="right" md-delay="400">
-                                        {{dayHour.weather.description}}
+                                        <span
+                                            translate="CONTAINER_DAYS.TOOLTIP.WEATHER_ICONS.{{dayHour.weather.icon | uppercase}}"></span>
                                     </md-tooltip>
                                 </div>
 
